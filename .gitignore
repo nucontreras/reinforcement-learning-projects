@@ -1,0 +1,22 @@
+.vs
+Assets/ML-Agents/*
+Assets/NextGenRecorder/*
+Assets/Plugins/*
+Assets/Resources/*
+Assets/Scenes/*.meta
+Assets/Scenes/Scene2.unity
+Assets/Scenes/Scene3.unity
+Assets/Scenes/Scene4.unity
+Assets/TextMesh Pro/*
+Assets/*.meta
+
+Library/*
+Logs/*
+obj/*
+Packages/*
+ProjectSettings/*
+results/*
+UserSettings/*
+.vsconfig
+*.csproj
+*.sln
