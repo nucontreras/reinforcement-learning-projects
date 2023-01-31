@@ -20,3 +20,37 @@ TheAbysm/UserSettings/*
 TheAbysm/.vsconfig
 TheAbysm/*.csproj
 TheAbysm/*.sln
+
+
+JumpingAgents/.vs
+JumpingAgents/Assets/3D Models/*
+JumpingAgents/Assets/Animation/*
+JumpingAgents/Assets/Darth_Artisan*
+JumpingAgents/Assets/Materials/*.meta
+JumpingAgents/Assets/ML-Agents/*
+JumpingAgents/Assets/Prefabs/*.meta
+JumpingAgents/Assets/Prefabs/Suv Mover Double.prefab
+JumpingAgents/Assets/Results/*.meta
+JumpingAgents/Assets/Scenes/*.meta
+JumpingAgents/Assets/Scripts/*.meta
+JumpingAgents/Assets/Scripts/Less Important/*.meta
+JumpingAgents/Assets/TextMesh Pro/*
+JumpingAgents/Assets/UI/*.meta
+JumpingAgents/Assets/*.meta
+JumpingAgents/Build/*
+JumpingAgents/Library/*
+JumpingAgents/Logs/*
+JumpingAgents/obj/*
+JumpingAgents/Packages/*
+JumpingAgents/ProjectSettings/*
+JumpingAgents/results/*
+JumpingAgents/Temp/*
+JumpingAgents/TrainerConfig/results/*
+JumpingAgents/TrainerConfig/jumper2.yaml
+JumpingAgents/TrainerConfig/trainer_config.yaml
+JumpingAgents/TrainerConfig/trainer_config_for_mlagentsV2andGreater.yaml
+JumpingAgents/UserSettings/*
+JumpingAgents/.vsconfig
+JumpingAgents/
+JumpingAgents/
+JumpingAgents/
