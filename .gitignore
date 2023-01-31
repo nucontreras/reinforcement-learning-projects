@@ -51,6 +51,3 @@ JumpingAgents/TrainerConfig/trainer_config.yaml
 JumpingAgents/TrainerConfig/trainer_config_for_mlagentsV2andGreater.yaml
 JumpingAgents/UserSettings/*
 JumpingAgents/.vsconfig
-JumpingAgents/
-JumpingAgents/
-JumpingAgents/
