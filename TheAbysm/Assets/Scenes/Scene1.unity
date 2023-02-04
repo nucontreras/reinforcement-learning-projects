@@ -649,7 +649,7 @@ MonoBehaviour:
   agentRunSpeed: 0.4
   agentRotationSpeed: 1
   goalScoredMaterial: {fileID: 2100000, guid: b85a7c5298707a14da35dadb8131c9a6, type: 2}
-  failMaterial: {fileID: 2100000, guid: f02c5fb490de2bc4b9e6e10915abd215, type: 2}
+  checkpointScoredMaterial: {fileID: 2100000, guid: 1ccd90f5705e28148a9dc54b6be6df81, type: 2}
 --- !u!4 &1397237976
 Transform:
   m_ObjectHideFlags: 0

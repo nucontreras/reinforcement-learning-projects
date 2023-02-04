@@ -3,6 +3,8 @@ TheAbysm/Assets/ML-Agents/*
 TheAbysm/Assets/NextGenRecorder/*
 TheAbysm/Assets/Plugins/*
 TheAbysm/Assets/Resources/*
+TheAbysm/Assets/Materials/*.meta
+TheAbysm/Assets/Results/*.meta
 TheAbysm/Assets/Scenes/*.meta
 TheAbysm/Assets/Scenes/Scene2.unity
 TheAbysm/Assets/Scenes/Scene3.unity
@@ -16,6 +18,7 @@ TheAbysm/obj/*
 TheAbysm/Packages/*
 TheAbysm/ProjectSettings/*
 TheAbysm/results/*
+TheAbysm/Temp/*
 TheAbysm/UserSettings/*
 TheAbysm/.vsconfig
 TheAbysm/*.csproj
