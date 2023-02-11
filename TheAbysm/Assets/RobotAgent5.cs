@@ -10,14 +10,14 @@ using Unity.MLAgents.Actuators;
 public class RobotAgent5 : Agent
 {
     float currentTime = 0f;
-    float startingTime = 10f;
+    float startingTime = 30f;
     public TextMeshProUGUI txtCountdown;
 
     Rigidbody rBody;
     public GameObject ground;
-    public GameObject Cube1;
-    public GameObject Cube2;
-    public GameObject Cube3;
+    public GameObject Checkpoint1;
+    public GameObject Checkpoint2;
+    public GameObject Checkpoint3;
     public Transform Target;
 
     Material m_GroundMaterial;
@@ -38,12 +38,12 @@ public class RobotAgent5 : Agent
     {
         this.rBody.angularVelocity = Vector3.zero;
         this.rBody.velocity = Vector3.zero;
-        this.transform.localPosition = new Vector3(0, 0, 0);
+        this.transform.localPosition = new Vector3(0, 0.2f, 0);
         this.rBody.transform.localRotation = Quaternion.Euler(0, 90, 0);
 
-        Cube1.SetActive(true);
-        Cube2.SetActive(true);
-        Cube3.SetActive(true);
+        Checkpoint1.SetActive(true);
+        Checkpoint2.SetActive(true);
+        Checkpoint3.SetActive(true);
 
         //Target.localPosition = new Vector3(10f, 0.83f, -9);
         currentTime = startingTime;

@@ -664,7 +664,7 @@ MonoBehaviour:
   m_DetectableTags:
   - Floor
   m_RaysPerDirection: 1
-  m_MaxRayDegrees: 42.8
+  m_MaxRayDegrees: 32.9
   m_SphereCastRadius: 0.17
   m_RayLength: 9
   m_RayLayerMask:
