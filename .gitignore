@@ -3,7 +3,8 @@ TheAbysm/Assets/ML-Agents/*
 TheAbysm/Assets/NextGenRecorder/*
 TheAbysm/Assets/Plugins/*
 TheAbysm/Assets/Resources/*
-TheAbysm/Assets/Materials/*.meta
+TheAbysm/Assets/Materials/*.mat.meta
+TheAbysm/Assets/Prefabs/*.meta
 TheAbysm/Assets/Results/*.meta
 TheAbysm/Assets/Scenes/*.meta
 TheAbysm/Assets/Scenes/Scene2.unity

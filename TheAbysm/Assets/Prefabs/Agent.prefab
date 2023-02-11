@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 1408874061500793594}
   - component: {fileID: 1408874061500793589}
   - component: {fileID: 1408874061500793588}
-  - component: {fileID: 3855935592698413799}
+  - component: {fileID: 7527241758739502410}
   - component: {fileID: 1408874061500793590}
   - component: {fileID: 1408874061500793585}
   m_Layer: 0
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_UseChildActuators: 1
   m_DeterministicInference: 0
   m_ObservableAttributeHandling: 0
---- !u!114 &3855935592698413799
+--- !u!114 &7527241758739502410
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -408,7 +408,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 0
+  MaxStep: 3000
   ground: {fileID: 0}
   CheckPoint1: {fileID: 0}
   CheckPoint2: {fileID: 0}
