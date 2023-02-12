@@ -18,6 +18,7 @@ public class RobotAgent5 : Agent
     public GameObject Checkpoint1;
     public GameObject Checkpoint2;
     public GameObject Checkpoint3;
+    public GameObject Checkpoint4;
     public Transform Target;
 
     Material m_GroundMaterial;
@@ -44,6 +45,7 @@ public class RobotAgent5 : Agent
         Checkpoint1.SetActive(true);
         Checkpoint2.SetActive(true);
         Checkpoint3.SetActive(true);
+        Checkpoint4.SetActive(true);
 
         //Target.localPosition = new Vector3(10f, 0.83f, -9);
         currentTime = startingTime;
@@ -158,6 +160,12 @@ public class RobotAgent5 : Agent
             col.gameObject.SetActive(false);
             StartCoroutine(GoalScoredSwapGroundMaterial(m_RobotSettings.checkpointScoredMaterial, 0.2f));
             AddReward(0.3f);
+        }
+        else if (col.gameObject.CompareTag("DestroyCol4"))
+        {
+            col.gameObject.SetActive(false);
+            StartCoroutine(GoalScoredSwapGroundMaterial(m_RobotSettings.checkpointScoredMaterial, 0.2f));
+            AddReward(0.4f);
         }
     }
     IEnumerator GoalScoredSwapGroundMaterial(Material mat, float time)
