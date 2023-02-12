@@ -10,7 +10,7 @@ using Unity.MLAgents.Actuators;
 public class RobotAgent5 : Agent
 {
     float currentTime = 0f;
-    float startingTime = 25f;
+    float startingTime = 20f;
     public TextMeshProUGUI txtCountdown;
 
     Rigidbody rBody;
