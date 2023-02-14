@@ -692,6 +692,7 @@ MonoBehaviour:
   - DestroyCol1
   - DestroyCol2
   - DestroyCol3
+  - DestroyCol4
   - Target
   m_RaysPerDirection: 1
   m_MaxRayDegrees: 4
@@ -1158,7 +1159,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 246393d70afbb764e8b141d477033aa6, type: 2}
+  - {fileID: 2100000, guid: c79d19f10a84e664aa3a10b17f9e3bdf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

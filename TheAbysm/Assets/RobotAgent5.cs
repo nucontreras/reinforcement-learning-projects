@@ -69,6 +69,7 @@ public class RobotAgent5 : Agent
         if (this.transform.localPosition.y < -0.5f)
         {
             //Debug.Log("<0");
+            //Debug.Log(Vector3.Distance(this.transform.localPosition, Target.localPosition));
             AddReward(-0.1f);
             EndEpisode();
         }
@@ -141,7 +142,7 @@ public class RobotAgent5 : Agent
         // Reached target
         if (col.gameObject.CompareTag("Target"))
         {
-            AddReward(0.8f);
+            AddReward(1.0f);
             StartCoroutine(GoalScoredSwapGroundMaterial(m_RobotSettings.goalScoredMaterial, 0.4f));
             EndEpisode();
         }
@@ -149,23 +150,23 @@ public class RobotAgent5 : Agent
         {
             col.gameObject.SetActive(false);
             StartCoroutine(GoalScoredSwapGroundMaterial(m_RobotSettings.checkpointScoredMaterial, 0.2f));
-            AddReward(0.1f);
+            AddReward(0.2f);
         } else if (col.gameObject.CompareTag("DestroyCol2"))
         {
             col.gameObject.SetActive(false);
             StartCoroutine(GoalScoredSwapGroundMaterial(m_RobotSettings.checkpointScoredMaterial, 0.2f));
-            AddReward(0.2f);
+            AddReward(0.3f);
         } else if (col.gameObject.CompareTag("DestroyCol3"))
         {
             col.gameObject.SetActive(false);
             StartCoroutine(GoalScoredSwapGroundMaterial(m_RobotSettings.checkpointScoredMaterial, 0.2f));
-            AddReward(0.3f);
+            AddReward(0.4f);
         }
         else if (col.gameObject.CompareTag("DestroyCol4"))
         {
             col.gameObject.SetActive(false);
             StartCoroutine(GoalScoredSwapGroundMaterial(m_RobotSettings.checkpointScoredMaterial, 0.2f));
-            AddReward(0.4f);
+            AddReward(0.5f);
         }
     }
     IEnumerator GoalScoredSwapGroundMaterial(Material mat, float time)
