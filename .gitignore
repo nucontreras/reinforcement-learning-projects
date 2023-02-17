@@ -20,7 +20,6 @@ TheAbysm/Assets/Stylized Lava Materials/*
 TheAbysm/Library/*
 TheAbysm/Logs/*
 TheAbysm/obj/*
-TheAbysm/Packages/*
 TheAbysm/ProjectSettings/*
 TheAbysm/results/*
 TheAbysm/Temp/*
@@ -49,7 +48,6 @@ JumpingAgents/Build/*
 JumpingAgents/Library/*
 JumpingAgents/Logs/*
 JumpingAgents/obj/*
-JumpingAgents/Packages/*
 JumpingAgents/ProjectSettings/*
 JumpingAgents/results/*
 JumpingAgents/Temp/*
@@ -59,3 +57,13 @@ JumpingAgents/TrainerConfig/trainer_config.yaml
 JumpingAgents/TrainerConfig/trainer_config_for_mlagentsV2andGreater.yaml
 JumpingAgents/UserSettings/*
 JumpingAgents/.vsconfig
+
+
+DroneAgent/.vsconfig
+DroneAgent/UserSettings/*
+DroneAgent/Temp/*
+DroneAgent/ProjectSettings/*
+DroneAgent/Logs/*
+DroneAgent/Library/*
+DroneAgent/Assets/*.meta
+DroneAgent/Assets/Scenes/*.meta
