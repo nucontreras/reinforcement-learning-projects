@@ -67,3 +67,5 @@ DroneAgent/Logs/*
 DroneAgent/Library/*
 DroneAgent/Assets/*.meta
 DroneAgent/Assets/Scenes/*.meta
+DroneAgent/obj/*
+DroneAgent/*.sln
