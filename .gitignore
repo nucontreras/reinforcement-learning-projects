@@ -69,3 +69,5 @@ DroneAgent/Assets/*.meta
 DroneAgent/Assets/Scenes/*.meta
 DroneAgent/obj/*
 DroneAgent/*.sln
+DroneAgent/.vs
+DroneAgent/Assembly-CSharp.csproj

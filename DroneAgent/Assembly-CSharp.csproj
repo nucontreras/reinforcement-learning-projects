@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DroneAgent.cs" />
+    <Compile Include="Assets\PropellerSpin.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
