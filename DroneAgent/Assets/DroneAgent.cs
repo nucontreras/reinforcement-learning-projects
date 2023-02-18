@@ -6,13 +6,18 @@ public class DroneAgent : MonoBehaviour
 {
     Rigidbody ourDrone;
     public float upForce;
-    private float movementForwardSpeed = 100f;  // 500
+    private float movementForwardSpeed = 500f;  // 500
     private float tiltAmountForward = 0f;
     private float tiltVelocityForward;
     private float wantedYRotation;
+    
+    
     private float currentYRotation;
     private float rotateAmoutByKeys = 2.5f;
     private float rotationYVelocity;
+    
+    private Vector3 velocityToSmoothDampToZero;
+
 
     void Awake()
     {
@@ -24,6 +29,7 @@ public class DroneAgent : MonoBehaviour
         MovementUpDown();
         MovementForward();
         Rotation();
+        ClampingSpeedValues();
         ourDrone.AddRelativeForce(Vector3.up * upForce);
         ourDrone.rotation = Quaternion.Euler(new Vector3(tiltAmountForward, currentYRotation, ourDrone.rotation.z));
     }
@@ -61,5 +67,24 @@ public class DroneAgent : MonoBehaviour
             wantedYRotation += rotateAmoutByKeys;
         }
         currentYRotation = Mathf.SmoothDamp(currentYRotation, wantedYRotation, ref rotationYVelocity, 0.25f);
+    }
+    void ClampingSpeedValues()
+    {
+        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
+        {
+            ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, 10f, Time.deltaTime * 5f));
+        }
+        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f)
+        {
+            ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, 10f, Time.deltaTime * 5f));
+        }
+        if (Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
+        {
+            ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, 5f, Time.deltaTime * 5f));
+        }
+        if (Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f)
+        {
+            ourDrone.velocity = Vector3.SmoothDamp(ourDrone.velocity, Vector3.zero, ref velocityToSmoothDampToZero, 0.95f);
+        }
     }
 }
