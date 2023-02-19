@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\DroneAgent.cs" />
     <Compile Include="Assets\PropellerSpin.cs" />
+    <Compile Include="Assets\CameraFollowScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

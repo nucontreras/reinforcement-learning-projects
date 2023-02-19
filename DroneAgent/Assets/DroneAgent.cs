@@ -9,10 +9,9 @@ public class DroneAgent : MonoBehaviour
     private float movementForwardSpeed = 500f;  // 500
     private float tiltAmountForward = 0f;
     private float tiltVelocityForward;
+    
     private float wantedYRotation;
-    
-    
-    private float currentYRotation;
+    public float currentYRotation;
     private float rotateAmoutByKeys = 2.5f;
     private float rotationYVelocity;
     
@@ -27,6 +26,10 @@ public class DroneAgent : MonoBehaviour
         ourDrone = GetComponent<Rigidbody>();
         //ourDrone.transform.localRotation = Quaternion.Euler(0, 180, 0);
     }
+    //void Start()
+    //{
+
+    //}
     private void FixedUpdate()
     {
         MovementUpDown();
