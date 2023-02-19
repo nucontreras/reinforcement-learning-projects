@@ -43,15 +43,45 @@ public class DroneAgent : MonoBehaviour
     }
     void MovementUpDown()
     {
+        if ((Mathf.Abs(Input.GetAxis("Vertical")) > 0.2f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f))
+        {
+            if(Input.GetKey(KeyCode.I) || Input.GetKey(KeyCode.K))
+            {
+                ourDrone.velocity = ourDrone.velocity;
+            }
+            if (!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K) && !Input.GetKey(KeyCode.J) && !Input.GetKey(KeyCode.L))
+            {
+                ourDrone.velocity = new Vector3(ourDrone.velocity.x, Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5), ourDrone.velocity.z);
+                upForce = 281;
+            }
+            if (!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K) && Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.L))
+            {
+                ourDrone.velocity = new Vector3(ourDrone.velocity.x, Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5), ourDrone.velocity.z);
+                upForce = 110;
+            }
+            if (Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.L))
+            {
+                upForce = 410;
+            }
+        }
+        if ((Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f))
+        {
+            upForce = 135;
+        }
+
         if (Input.GetKey(KeyCode.I))
         {
             upForce = 450f;
+            if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
+            {
+                upForce = 500f;
+            }
         }
         else if (Input.GetKey(KeyCode.K))
         {
             upForce = -200f;
         } 
-        else if (!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K))
+        else if (!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K) && (Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f))
         {
             upForce = 98.1f;
         }
