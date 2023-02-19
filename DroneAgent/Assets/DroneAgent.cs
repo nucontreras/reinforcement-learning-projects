@@ -18,6 +18,9 @@ public class DroneAgent : MonoBehaviour
     
     private Vector3 velocityToSmoothDampToZero;
 
+    private float sideMovementAmount = 300f;
+    private float tiltAmountSideways;
+    private float tiltAmountVelocity;
 
     void Awake()
     {
@@ -30,8 +33,10 @@ public class DroneAgent : MonoBehaviour
         MovementForward();
         Rotation();
         ClampingSpeedValues();
+        Swerwe();
+
         ourDrone.AddRelativeForce(Vector3.up * upForce);
-        ourDrone.rotation = Quaternion.Euler(new Vector3(tiltAmountForward, currentYRotation, ourDrone.rotation.z));
+        ourDrone.rotation = Quaternion.Euler(new Vector3(tiltAmountForward, currentYRotation, tiltAmountSideways));
     }
     void MovementUpDown()
     {
@@ -85,6 +90,18 @@ public class DroneAgent : MonoBehaviour
         if (Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f)
         {
             ourDrone.velocity = Vector3.SmoothDamp(ourDrone.velocity, Vector3.zero, ref velocityToSmoothDampToZero, 0.95f);
+        }
+    }
+    void Swerwe()
+    {
+        if(Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
+        {
+            ourDrone.AddRelativeForce(Vector3.right * Input.GetAxis("Horizontal") * sideMovementAmount);
+            tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, -20 * Input.GetAxis("Horizontal"), ref tiltAmountVelocity, 0.1f);
+        }
+        else
+        {
+            tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, 0, ref tiltAmountVelocity, 0.1f);
         }
     }
 }
