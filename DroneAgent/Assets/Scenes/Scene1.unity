@@ -429,7 +429,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &359327335 stripped
 GameObject:
@@ -478,7 +478,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 86ff9f64c8498704794a1c72a878e440, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86ff9f64c8498704794a1c72a878e440, type: 3}
       propertyPath: m_LocalPosition.x
@@ -523,6 +523,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 86ff9f64c8498704794a1c72a878e440, type: 3}
       propertyPath: m_Name
       value: drone
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86ff9f64c8498704794a1c72a878e440, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86ff9f64c8498704794a1c72a878e440, type: 3}
@@ -842,6 +846,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -912,9 +917,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2053394756}
-  m_RootOrder: 18
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 18.037, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec1ddebcbc93934daf0f23e6efab139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behindPosition: {x: 0, y: 2.5, z: -6}
+  angle: 17
 --- !u!4 &965934142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2548195547017166402, guid: 86ff9f64c8498704794a1c72a878e440, type: 3}
@@ -1464,6 +1483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upForce: 0
+  currentYRotation: 0
 --- !u!54 &2053394755
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1480,11 +1500,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!4 &2053394756 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 86ff9f64c8498704794a1c72a878e440, type: 3}
-  m_PrefabInstance: {fileID: 566945159}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2054289880 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3357929362897464143, guid: 86ff9f64c8498704794a1c72a878e440, type: 3}
