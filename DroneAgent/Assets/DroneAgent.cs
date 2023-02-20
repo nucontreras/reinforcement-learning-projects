@@ -1,8 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using Unity.MLAgents;
+using Unity.MLAgents.Sensors;
+using Unity.MLAgents.Actuators;
 
-public class DroneAgent : MonoBehaviour
+public class DroneAgent : Agent
 {
     Rigidbody ourDrone;
     public float upForce;
@@ -21,120 +26,146 @@ public class DroneAgent : MonoBehaviour
     private float tiltAmountSideways;
     private float tiltAmountVelocity;
 
-    void Awake()
+    public override void Initialize()
     {
+        //currentTime = startingTime;
+        //m_RobotSettings = FindObjectOfType<RobotSettings>();
         ourDrone = GetComponent<Rigidbody>();
-        //ourDrone.transform.localRotation = Quaternion.Euler(0, 180, 0);
+        //m_GroundRenderer = ground.GetComponent<Renderer>();
+        //m_GroundMaterial = m_GroundRenderer.material;
     }
-    //void Start()
+
+    public override void OnEpisodeBegin()
+    {
+        this.ourDrone.angularVelocity = Vector3.zero;
+        this.ourDrone.velocity = Vector3.zero;
+        //this.transform.localPosition = new Vector3(0, 0.2f, 0);
+        //this.ourDrone.transform.localRotation = Quaternion.Euler(0, 90, 0);
+
+        //Checkpoint1.SetActive(true);
+        //Checkpoint2.SetActive(true);
+        //Checkpoint3.SetActive(true);
+        //Checkpoint4.SetActive(true);
+
+        //Target.localPosition = new Vector3(10f, 0.83f, -9);
+        //currentTime = startingTime;
+
+    }
+
+    //void Awake()
     //{
-
+    //    ourDrone = GetComponent<Rigidbody>();
+    //    //ourDrone.transform.localRotation = Quaternion.Euler(0, 180, 0);
     //}
-    private void FixedUpdate()
-    {
-        MovementUpDown();
-        MovementForward();
-        Rotation();
-        ClampingSpeedValues();
-        Swerwe();
+    ////void Start()
+    ////{
 
-        ourDrone.AddRelativeForce(Vector3.up * upForce);
-        ourDrone.rotation = Quaternion.Euler(new Vector3(tiltAmountForward, currentYRotation, tiltAmountSideways));
-    }
-    void MovementUpDown()
-    {
-        if ((Mathf.Abs(Input.GetAxis("Vertical")) > 0.2f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f))
-        {
-            if(Input.GetKey(KeyCode.I) || Input.GetKey(KeyCode.K))
-            {
-                ourDrone.velocity = ourDrone.velocity;
-            }
-            if (!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K) && !Input.GetKey(KeyCode.J) && !Input.GetKey(KeyCode.L))
-            {
-                ourDrone.velocity = new Vector3(ourDrone.velocity.x, Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5), ourDrone.velocity.z);
-                upForce = 281;
-            }
-            if (!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K) && Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.L))
-            {
-                ourDrone.velocity = new Vector3(ourDrone.velocity.x, Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5), ourDrone.velocity.z);
-                upForce = 110;
-            }
-            if (Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.L))
-            {
-                upForce = 410;
-            }
-        }
-        if ((Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f))
-        {
-            upForce = 135;
-        }
+    ////}
+    //private void FixedUpdate()
+    //{
+    //    MovementUpDown();
+    //    MovementForward();
+    //    Rotation();
+    //    ClampingSpeedValues();
+    //    Swerwe();
 
-        if (Input.GetKey(KeyCode.I))
-        {
-            upForce = 450f;
-            if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
-            {
-                upForce = 500f;
-            }
-        }
-        else if (Input.GetKey(KeyCode.K))
-        {
-            upForce = -200f;
-        } 
-        else if (!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K) && (Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f))
-        {
-            upForce = 98.1f;
-        }
-    }
-    void MovementForward()
-    {
-        if(Input.GetAxis("Vertical") != 0)
-        {
-            ourDrone.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * movementForwardSpeed);
-            tiltAmountForward = Mathf.SmoothDamp(tiltAmountForward, 20 * Input.GetAxis("Vertical"), ref tiltVelocityForward, 0.1f);
-        }
-    }
-    void Rotation()
-    {
-        if (Input.GetKey(KeyCode.J))
-        {
-            wantedYRotation -= rotateAmoutByKeys;
-        }
-        if (Input.GetKey(KeyCode.L))
-        {
-            wantedYRotation += rotateAmoutByKeys;
-        }
-        currentYRotation = Mathf.SmoothDamp(currentYRotation, wantedYRotation, ref rotationYVelocity, 0.25f);
-    }
-    void ClampingSpeedValues()
-    {
-        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
-        {
-            ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, 10f, Time.deltaTime * 5f));
-        }
-        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f)
-        {
-            ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, 10f, Time.deltaTime * 5f));
-        }
-        if (Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
-        {
-            ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, 5f, Time.deltaTime * 5f));
-        }
-        if (Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f)
-        {
-            ourDrone.velocity = Vector3.SmoothDamp(ourDrone.velocity, Vector3.zero, ref velocityToSmoothDampToZero, 0.95f);
-        }
-    }
-    void Swerwe()
-    {
-        if(Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
-        {
-            ourDrone.AddRelativeForce(Vector3.right * Input.GetAxis("Horizontal") * sideMovementAmount);
-            tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, -20 * Input.GetAxis("Horizontal"), ref tiltAmountVelocity, 0.1f);
-        }
-        else
-        {
-            tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, 0, ref tiltAmountVelocity, 0.1f);
-        }
-    }
+    //    ourDrone.AddRelativeForce(Vector3.up * upForce);
+    //    ourDrone.rotation = Quaternion.Euler(new Vector3(tiltAmountForward, currentYRotation, tiltAmountSideways));
+    //}
+    //void MovementUpDown()
+    //{
+    //    if ((Mathf.Abs(Input.GetAxis("Vertical")) > 0.2f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f))
+    //    {
+    //        if(Input.GetKey(KeyCode.I) || Input.GetKey(KeyCode.K))
+    //        {
+    //            ourDrone.velocity = ourDrone.velocity;
+    //        }
+    //        if (!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K) && !Input.GetKey(KeyCode.J) && !Input.GetKey(KeyCode.L))
+    //        {
+    //            ourDrone.velocity = new Vector3(ourDrone.velocity.x, Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5), ourDrone.velocity.z);
+    //            upForce = 281;
+    //        }
+    //        if (!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K) && Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.L))
+    //        {
+    //            ourDrone.velocity = new Vector3(ourDrone.velocity.x, Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5), ourDrone.velocity.z);
+    //            upForce = 110;
+    //        }
+    //        if (Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.L))
+    //        {
+    //            upForce = 410;
+    //        }
+    //    }
+    //    if ((Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f))
+    //    {
+    //        upForce = 135;
+    //    }
+
+    //    if (Input.GetKey(KeyCode.I))
+    //    {
+    //        upForce = 450f;
+    //        if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
+    //        {
+    //            upForce = 500f;
+    //        }
+    //    }
+    //    else if (Input.GetKey(KeyCode.K))
+    //    {
+    //        upForce = -200f;
+    //    } 
+    //    else if (!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K) && (Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f))
+    //    {
+    //        upForce = 98.1f;
+    //    }
+    //}
+    //void MovementForward()
+    //{
+    //    if(Input.GetAxis("Vertical") != 0)
+    //    {
+    //        ourDrone.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * movementForwardSpeed);
+    //        tiltAmountForward = Mathf.SmoothDamp(tiltAmountForward, 20 * Input.GetAxis("Vertical"), ref tiltVelocityForward, 0.1f);
+    //    }
+    //}
+    //void Rotation()
+    //{
+    //    if (Input.GetKey(KeyCode.J))
+    //    {
+    //        wantedYRotation -= rotateAmoutByKeys;
+    //    }
+    //    if (Input.GetKey(KeyCode.L))
+    //    {
+    //        wantedYRotation += rotateAmoutByKeys;
+    //    }
+    //    currentYRotation = Mathf.SmoothDamp(currentYRotation, wantedYRotation, ref rotationYVelocity, 0.25f);
+    //}
+    //void ClampingSpeedValues()
+    //{
+    //    if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
+    //    {
+    //        ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, 10f, Time.deltaTime * 5f));
+    //    }
+    //    if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f)
+    //    {
+    //        ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, 10f, Time.deltaTime * 5f));
+    //    }
+    //    if (Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
+    //    {
+    //        ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, 5f, Time.deltaTime * 5f));
+    //    }
+    //    if (Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f)
+    //    {
+    //        ourDrone.velocity = Vector3.SmoothDamp(ourDrone.velocity, Vector3.zero, ref velocityToSmoothDampToZero, 0.95f);
+    //    }
+    //}
+    //void Swerwe()
+    //{
+    //    if(Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
+    //    {
+    //        ourDrone.AddRelativeForce(Vector3.right * Input.GetAxis("Horizontal") * sideMovementAmount);
+    //        tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, -20 * Input.GetAxis("Horizontal"), ref tiltAmountVelocity, 0.1f);
+    //    }
+    //    else
+    //    {
+    //        tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, 0, ref tiltAmountVelocity, 0.1f);
+    //    }
+    //}
 }
