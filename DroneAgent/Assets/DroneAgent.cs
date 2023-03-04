@@ -27,8 +27,6 @@ public class DroneAgent : Agent
     private float tiltAmountSideways;
     private float tiltAmountVelocity;
 
-    // Sensor part - in testing
-    private readonly bool useVectorObs = true;
 
     public override void Initialize()
     {
@@ -69,11 +67,11 @@ public class DroneAgent : Agent
 
         //MoveAgent(actionBuffers.DiscreteActions);
 
-        MovementUpDown(actionBuffers.DiscreteActions);
-        MovementForward(actionBuffers.DiscreteActions);
+        MovementUpDown(actionBuffers);
+        MovementForward(actionBuffers);
         Rotation(actionBuffers.DiscreteActions);
-        ClampingSpeedValues(actionBuffers.DiscreteActions);
-        Swerwe(actionBuffers.DiscreteActions);
+        ClampingSpeedValues(actionBuffers);
+        Swerwe(actionBuffers);
 
         ourDrone.AddRelativeForce(Vector3.up * upForce);
         ourDrone.rotation = Quaternion.Euler(new Vector3(tiltAmountForward, currentYRotation, tiltAmountSideways));
@@ -101,76 +99,65 @@ public class DroneAgent : Agent
         AddReward(-0.1f / MaxStep);
     }
 
-    public void MoveAgent(ActionSegment<int> act)
-    {
-        var dirToGo = Vector3.zero;
-        var rotateDir = Vector3.zero;
+    //public void MoveAgent(ActionSegment<int> act)
+    //{
+    //    var dirToGo = Vector3.zero;
+    //    var rotateDir = Vector3.zero;
 
-        var action = act[0];
+    //    var action = act[0];
 
-        switch (action)
-        {
-            case 1:
-                dirToGo = transform.forward * 1f;
-                break;
-            case 2:
-                dirToGo = transform.forward * -1f;
-                break;
-            case 3:
-                rotateDir = transform.up * 1f;
-                break;
-            case 4:
-                rotateDir = transform.up * -1f;
-                break;
-            case 5:
-                dirToGo = transform.right * -0.75f;
-                break;
-            case 6:
-                dirToGo = transform.right * 0.75f;
-                break;
-            case 7:
-                dirToGo = transform.right * -0.75f;
-                break;
-            case 8:
-                dirToGo = transform.right * 0.75f;
-                break;
-        }
-    }
+    //    switch (action)
+    //    {
+    //        case 1:
+    //            dirToGo = transform.forward * 1f;
+    //            break;
+    //        case 2:
+    //            dirToGo = transform.forward * -1f;
+    //            break;
+    //        case 3:
+    //            rotateDir = transform.up * 1f;
+    //            break;
+    //        case 4:
+    //            rotateDir = transform.up * -1f;
+    //            break;
+    //        case 5:
+    //            dirToGo = transform.right * -0.75f;
+    //            break;
+    //        case 6:
+    //            dirToGo = transform.right * 0.75f;
+    //            break;
+    //        case 7:
+    //            dirToGo = transform.right * -0.75f;
+    //            break;
+    //        case 8:
+    //            dirToGo = transform.right * 0.75f;
+    //            break;
+    //    }
+    //}
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         var discreteActionsOut = actionsOut.DiscreteActions;
-        if (Input.GetKey(KeyCode.D))
+
+        var continuousActionsOut = actionsOut.ContinuousActions;
+        continuousActionsOut[0] = Input.GetAxis("Horizontal");
+        continuousActionsOut[1] = Input.GetAxis("Vertical");
+
+        if (Input.GetKey(KeyCode.L))
         {
             discreteActionsOut[0] = 3;
         }
-        else if (Input.GetKey(KeyCode.W))
+        else if (Input.GetKey(KeyCode.I))
         {
             discreteActionsOut[0] = 1;
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.J))
         {
             discreteActionsOut[0] = 4;
         }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            discreteActionsOut[0] = 2;
-        }
-        else if (Input.GetKey(KeyCode.L))
-        {
-            discreteActionsOut[0] = 7;
-        }
-        else if (Input.GetKey(KeyCode.I))
-        {
-            discreteActionsOut[0] = 5;
-        }
-        else if (Input.GetKey(KeyCode.J))
-        {
-            discreteActionsOut[0] = 8;
-        }
         else if (Input.GetKey(KeyCode.K))
         {
-            discreteActionsOut[0] = 6;
+            discreteActionsOut[0] = 2;
         }
     }
 
@@ -197,96 +184,112 @@ public class DroneAgent : Agent
     //    ourDrone.rotation = Quaternion.Euler(new Vector3(tiltAmountForward, currentYRotation, tiltAmountSideways));
     //}
 
-    public void MovementUpDown(ActionSegment<int> act)
+    public void MovementUpDown(ActionBuffers actionBuffers)
     {
-        if ((Mathf.Abs(Input.GetAxis("Vertical")) > 0.2f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f))
+        var actionZ = actionBuffers.ContinuousActions[0];  // horizontal
+        var actionX = actionBuffers.ContinuousActions[1];  // vertical
+
+        var action = actionBuffers.DiscreteActions[0];
+
+        if ((Mathf.Abs(actionX) > 0.2f || Mathf.Abs(actionZ) > 0.2f))
         {
-            if (Input.GetKey(KeyCode.I) || Input.GetKey(KeyCode.K))
+            if (action==1 || action==2)
             {
+                Debug.Log("action==1 || action==2");
                 ourDrone.velocity = ourDrone.velocity;
             }
-            if (!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K) && !Input.GetKey(KeyCode.J) && !Input.GetKey(KeyCode.L))
+            if (!(action==1) && !(action==2) && !(action==4) && !(action==3))
             {
                 ourDrone.velocity = new Vector3(ourDrone.velocity.x, Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5), ourDrone.velocity.z);
                 upForce = 281;
             }
-            if (!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K) && Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.L))
+            if (!(action==1) && !(action==2) && action==4 || action==3)
             {
                 ourDrone.velocity = new Vector3(ourDrone.velocity.x, Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5), ourDrone.velocity.z);
                 upForce = 110;
             }
-            if (Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.L))
+            if (action==4 || action==3)
             {
                 upForce = 410;
             }
         }
-        if ((Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f))
+        if ((Mathf.Abs(actionX) < 0.2f && Mathf.Abs(actionZ) > 0.2f))
         {
             upForce = 135;
         }
 
-        if (Input.GetKey(KeyCode.I))
+        if (action==1)
         {
+            Debug.Log("action==1");
             upForce = 450f;
-            if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
+            if (Mathf.Abs(actionZ) > 0.2f)
             {
                 upForce = 500f;
             }
         }
-        else if (Input.GetKey(KeyCode.K))
+        else if (action==2)
         {
             upForce = -200f;
         }
-        else if (!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K) && (Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f))
+        else if (!(action==1) && !(action==2) && (Mathf.Abs(actionX) < 0.2f && Mathf.Abs(actionZ) < 0.2f))
         {
             upForce = 98.1f;
         }
     }
-    public void MovementForward(ActionSegment<int> act)
+    public void MovementForward(ActionBuffers actionBuffers)
     {
-        if (Input.GetAxis("Vertical") != 0)
+        var actionZ = actionBuffers.ContinuousActions[0];  // horizontal
+        var actionX = actionBuffers.ContinuousActions[1];  // vertical
+
+        if (actionX != 0)
         {
-            ourDrone.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * movementForwardSpeed);
-            tiltAmountForward = Mathf.SmoothDamp(tiltAmountForward, 20 * Input.GetAxis("Vertical"), ref tiltVelocityForward, 0.1f);
+            ourDrone.AddRelativeForce(Vector3.forward * actionX * movementForwardSpeed);
+            tiltAmountForward = Mathf.SmoothDamp(tiltAmountForward, 20 * actionX, ref tiltVelocityForward, 0.1f);
         }
     }
     public void Rotation(ActionSegment<int> act)
     {
-        if (Input.GetKey(KeyCode.J))
+        var action = act[0];
+        if (action==4)
         {
             wantedYRotation -= rotateAmoutByKeys;
         }
-        if (Input.GetKey(KeyCode.L))
+        if (action==3)
         {
             wantedYRotation += rotateAmoutByKeys;
         }
         currentYRotation = Mathf.SmoothDamp(currentYRotation, wantedYRotation, ref rotationYVelocity, 0.25f);
     }
-    public void ClampingSpeedValues(ActionSegment<int> act)
+    public void ClampingSpeedValues(ActionBuffers actionBuffers)
     {
-        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
+        var actionZ = actionBuffers.ContinuousActions[0];  // horizontal
+        var actionX = actionBuffers.ContinuousActions[1];  // vertical
+
+        if (Mathf.Abs(actionX) > 0.2f && Mathf.Abs(actionZ) > 0.2f)
         {
             ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, 10f, Time.deltaTime * 5f));
         }
-        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f)
+        if (Mathf.Abs(actionX) > 0.2f && Mathf.Abs(actionZ) < 0.2f)
         {
             ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, 10f, Time.deltaTime * 5f));
         }
-        if (Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
+        if (Mathf.Abs(actionX) < 0.2f && Mathf.Abs(actionZ) > 0.2f)
         {
             ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, 5f, Time.deltaTime * 5f));
         }
-        if (Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f)
+        if (Mathf.Abs(actionX) < 0.2f && Mathf.Abs(actionZ) < 0.2f)
         {
             ourDrone.velocity = Vector3.SmoothDamp(ourDrone.velocity, Vector3.zero, ref velocityToSmoothDampToZero, 0.95f);
         }
     }
-    public void Swerwe(ActionSegment<int> act)
+    public void Swerwe(ActionBuffers actionBuffers)
     {
-        if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f)
+        var actionZ = actionBuffers.ContinuousActions[0];  // horizontal
+        var actionX = actionBuffers.ContinuousActions[1];  // vertical
+        if (Mathf.Abs(actionZ) > 0.2f)
         {
-            ourDrone.AddRelativeForce(Vector3.right * Input.GetAxis("Horizontal") * sideMovementAmount);
-            tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, -20 * Input.GetAxis("Horizontal"), ref tiltAmountVelocity, 0.1f);
+            ourDrone.AddRelativeForce(Vector3.right * actionZ * sideMovementAmount);
+            tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, -20 * actionZ, ref tiltAmountVelocity, 0.1f);
         }
         else
         {
