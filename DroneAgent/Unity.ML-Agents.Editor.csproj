@@ -56,50 +56,50 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\MLAgentsSettingsBuildProvider.cs">
-      <Link>Editor\MLAgentsSettingsBuildProvider.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\Match3SensorComponentEditor.cs">
-      <Link>Editor\Match3SensorComponentEditor.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\RenderTextureSensorComponentEditor.cs">
-      <Link>Editor\RenderTextureSensorComponentEditor.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\DemonstrationDrawer.cs">
-      <Link>Editor\DemonstrationDrawer.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\AgentEditor.cs">
-      <Link>Editor\AgentEditor.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\EditorUtilities.cs">
-      <Link>Editor\EditorUtilities.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\Match3ActuatorComponentEditor.cs">
-      <Link>Editor\Match3ActuatorComponentEditor.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\VectorSensorComponentEditor.cs">
-      <Link>Editor\VectorSensorComponentEditor.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\BehaviorParametersEditor.cs">
       <Link>Editor\BehaviorParametersEditor.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\DemonstrationImporter.cs">
       <Link>Editor\DemonstrationImporter.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\RayPerceptionSensorComponentBaseEditor.cs">
-      <Link>Editor\RayPerceptionSensorComponentBaseEditor.cs</Link>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\MLAgentsSettingsProvider.cs">
+      <Link>Editor\MLAgentsSettingsProvider.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\BrainParametersDrawer.cs">
-      <Link>Editor\BrainParametersDrawer.cs</Link>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\MLAgentsSettingsBuildProvider.cs">
+      <Link>Editor\MLAgentsSettingsBuildProvider.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\RenderTextureSensorComponentEditor.cs">
+      <Link>Editor\RenderTextureSensorComponentEditor.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\EditorUtilities.cs">
+      <Link>Editor\EditorUtilities.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\GridSensorComponentEditor.cs">
       <Link>Editor\GridSensorComponentEditor.cs</Link>
     </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\Match3SensorComponentEditor.cs">
+      <Link>Editor\Match3SensorComponentEditor.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\AgentEditor.cs">
+      <Link>Editor\AgentEditor.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\VectorSensorComponentEditor.cs">
+      <Link>Editor\VectorSensorComponentEditor.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\BrainParametersDrawer.cs">
+      <Link>Editor\BrainParametersDrawer.cs</Link>
+    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\CameraSensorComponentEditor.cs">
       <Link>Editor\CameraSensorComponentEditor.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\MLAgentsSettingsProvider.cs">
-      <Link>Editor\MLAgentsSettingsProvider.cs</Link>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\DemonstrationDrawer.cs">
+      <Link>Editor\DemonstrationDrawer.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\Match3ActuatorComponentEditor.cs">
+      <Link>Editor\Match3ActuatorComponentEditor.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\RayPerceptionSensorComponentBaseEditor.cs">
+      <Link>Editor\RayPerceptionSensorComponentBaseEditor.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\BufferSensorComponentEditor.cs">
       <Link>Editor\BufferSensorComponentEditor.cs</Link>
@@ -366,6 +366,9 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.IO.Abstractions">
+      <HintPath>C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Plugins\System.IO.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -374,30 +377,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.TextureAssets">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
-    </Reference>
-    <Reference Include="unityplastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
-    </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="ReportGeneratorMerged">
-      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Abstractions">
-      <HintPath>C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Plugins\System.IO.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
@@ -408,23 +387,44 @@
     <Reference Include="Google.Protobuf">
       <HintPath>Library\PackageCache\com.unity.barracuda@2.3.1-preview\Barracuda\Runtime\Plugins\ProtoBuffer\Google.Protobuf.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Cecil.Pdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
     </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="System.IO.Abstractions.TestingHelpers">
       <HintPath>C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Plugins\System.IO.Abstractions.TestingHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportGeneratorMerged">
+      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
     </Reference>
     <Reference Include="System.Interactive.Async">
       <HintPath>C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Plugins\ProtoBuffer\System.Interactive.Async.dll</HintPath>
     </Reference>
     <Reference Include="Grpc.Core">
       <HintPath>C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Plugins\ProtoBuffer\Grpc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

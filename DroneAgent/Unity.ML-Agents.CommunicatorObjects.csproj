@@ -56,11 +56,17 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\AgentInfo.cs">
-      <Link>Runtime\Grpc\CommunicatorObjects\AgentInfo.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityRlInitializationOutput.cs">
       <Link>Runtime\Grpc\CommunicatorObjects\UnityRlInitializationOutput.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\Header.cs">
+      <Link>Runtime\Grpc\CommunicatorObjects\Header.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\EngineConfiguration.cs">
+      <Link>Runtime\Grpc\CommunicatorObjects\EngineConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityToExternal.cs">
+      <Link>Runtime\Grpc\CommunicatorObjects\UnityToExternal.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\AssemblyInfo.cs">
       <Link>Runtime\Grpc\AssemblyInfo.cs</Link>
@@ -68,32 +74,41 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\TrainingAnalytics.cs">
       <Link>Runtime\Grpc\CommunicatorObjects\TrainingAnalytics.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\Header.cs">
-      <Link>Runtime\Grpc\CommunicatorObjects\Header.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityRlInput.cs">
-      <Link>Runtime\Grpc\CommunicatorObjects\UnityRlInput.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\SpaceType.cs">
       <Link>Runtime\Grpc\CommunicatorObjects\SpaceType.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityInput.cs">
-      <Link>Runtime\Grpc\CommunicatorObjects\UnityInput.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityRlOutput.cs">
       <Link>Runtime\Grpc\CommunicatorObjects\UnityRlOutput.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityOutput.cs">
-      <Link>Runtime\Grpc\CommunicatorObjects\UnityOutput.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\AgentInfoActionPair.cs">
-      <Link>Runtime\Grpc\CommunicatorObjects\AgentInfoActionPair.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\Command.cs">
       <Link>Runtime\Grpc\CommunicatorObjects\Command.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\BrainParameters.cs">
       <Link>Runtime\Grpc\CommunicatorObjects\BrainParameters.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\DemonstrationMeta.cs">
+      <Link>Runtime\Grpc\CommunicatorObjects\DemonstrationMeta.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityToExternalGrpc.cs">
+      <Link>Runtime\Grpc\CommunicatorObjects\UnityToExternalGrpc.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityRlInitializationInput.cs">
+      <Link>Runtime\Grpc\CommunicatorObjects\UnityRlInitializationInput.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\AgentInfo.cs">
+      <Link>Runtime\Grpc\CommunicatorObjects\AgentInfo.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityRlInput.cs">
+      <Link>Runtime\Grpc\CommunicatorObjects\UnityRlInput.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityInput.cs">
+      <Link>Runtime\Grpc\CommunicatorObjects\UnityInput.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityOutput.cs">
+      <Link>Runtime\Grpc\CommunicatorObjects\UnityOutput.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\AgentInfoActionPair.cs">
+      <Link>Runtime\Grpc\CommunicatorObjects\AgentInfoActionPair.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\AgentAction.cs">
       <Link>Runtime\Grpc\CommunicatorObjects\AgentAction.cs</Link>
@@ -104,26 +119,11 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\Capabilities.cs">
       <Link>Runtime\Grpc\CommunicatorObjects\Capabilities.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\DemonstrationMeta.cs">
-      <Link>Runtime\Grpc\CommunicatorObjects\DemonstrationMeta.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\EngineConfiguration.cs">
-      <Link>Runtime\Grpc\CommunicatorObjects\EngineConfiguration.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityToExternal.cs">
-      <Link>Runtime\Grpc\CommunicatorObjects\UnityToExternal.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityMessage.cs">
-      <Link>Runtime\Grpc\CommunicatorObjects\UnityMessage.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\CustomResetParameters.cs">
       <Link>Runtime\Grpc\CommunicatorObjects\CustomResetParameters.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityToExternalGrpc.cs">
-      <Link>Runtime\Grpc\CommunicatorObjects\UnityToExternalGrpc.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityRlInitializationInput.cs">
-      <Link>Runtime\Grpc\CommunicatorObjects\UnityRlInitializationInput.cs</Link>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Grpc\CommunicatorObjects\UnityMessage.cs">
+      <Link>Runtime\Grpc\CommunicatorObjects\UnityMessage.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -384,6 +384,9 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.IO.Abstractions">
+      <HintPath>C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Plugins\System.IO.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -392,30 +395,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.TextureAssets">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
-    </Reference>
-    <Reference Include="unityplastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
-    </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="ReportGeneratorMerged">
-      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Abstractions">
-      <HintPath>C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Plugins\System.IO.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
@@ -426,23 +405,44 @@
     <Reference Include="Google.Protobuf">
       <HintPath>Library\PackageCache\com.unity.barracuda@2.3.1-preview\Barracuda\Runtime\Plugins\ProtoBuffer\Google.Protobuf.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Cecil.Pdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
     </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="System.IO.Abstractions.TestingHelpers">
       <HintPath>C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Plugins\System.IO.Abstractions.TestingHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportGeneratorMerged">
+      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
     </Reference>
     <Reference Include="System.Interactive.Async">
       <HintPath>C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Plugins\ProtoBuffer\System.Interactive.Async.dll</HintPath>
     </Reference>
     <Reference Include="Grpc.Core">
       <HintPath>C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Plugins\ProtoBuffer\Grpc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
