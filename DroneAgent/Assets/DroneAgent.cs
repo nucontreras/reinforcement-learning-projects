@@ -6,12 +6,13 @@ using TMPro;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
+using System;
 
 public class DroneAgent : Agent
 {
     // Drone parameters
     Rigidbody ourDrone;
-    public float upForce;
+    private float upForce = 98.1f;
     private float movementForwardSpeed = 500f;  // 500
     private float tiltAmountForward = 0f;
     private float tiltVelocityForward;
@@ -30,7 +31,7 @@ public class DroneAgent : Agent
     // Target
 
     public GameObject target;
-    public Vector3[] targets = new Vector3[5];
+    private Vector3[] targets = new Vector3[5];
     private int index = 0;
 
 
@@ -39,6 +40,8 @@ public class DroneAgent : Agent
         //currentTime = startingTime;
         //m_RobotSettings = FindObjectOfType<RobotSettings>();
         ourDrone = GetComponent<Rigidbody>();
+        ourDrone.angularVelocity = Vector3.zero;
+        ourDrone.velocity = Vector3.zero;
         //m_GroundRenderer = ground.GetComponent<Renderer>();
         //m_GroundMaterial = m_GroundRenderer.material;
 
@@ -54,9 +57,13 @@ public class DroneAgent : Agent
 
     public override void OnEpisodeBegin()
     {
+        this.ourDrone.transform.localPosition = new Vector3(0f, 0f, 0f);
         this.ourDrone.angularVelocity = Vector3.zero;
         this.ourDrone.velocity = Vector3.zero;
-        this.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+        
+        //upForce = 98.1f;
+        //this.ourDrone.AddRelativeForce(Vector3.up * upForce);  
+        //this.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
         //this.ourDrone.transform.localRotation = Quaternion.Euler(0, 90, 0);
 
         //Checkpoint1.SetActive(true);
@@ -119,6 +126,7 @@ public class DroneAgent : Agent
         var discreteActionsOut = actionsOut.DiscreteActions;
 
         var continuousActionsOut = actionsOut.ContinuousActions;
+
         continuousActionsOut[0] = Input.GetAxis("Horizontal");
         continuousActionsOut[1] = Input.GetAxis("Vertical");
 
@@ -150,6 +158,10 @@ public class DroneAgent : Agent
 
         if ((Mathf.Abs(actionX) > 0.2f || Mathf.Abs(actionZ) > 0.2f))
         {
+            Debug.Log("big action x and action z");
+            Debug.Log(actionX);
+            Debug.Log(actionZ);
+
             if (action==1 || action==2)
             {
                 ourDrone.velocity = ourDrone.velocity;
@@ -241,6 +253,7 @@ public class DroneAgent : Agent
     {
         var actionZ = actionBuffers.ContinuousActions[0];  // horizontal
         var actionX = actionBuffers.ContinuousActions[1];  // vertical
+
         if (Mathf.Abs(actionZ) > 0.2f)
         {
             ourDrone.AddRelativeForce(Vector3.right * actionZ * sideMovementAmount);
