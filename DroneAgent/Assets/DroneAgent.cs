@@ -195,7 +195,6 @@ public class DroneAgent : Agent
         {
             if (action==1 || action==2)
             {
-                Debug.Log("action==1 || action==2");
                 ourDrone.velocity = ourDrone.velocity;
             }
             if (!(action==1) && !(action==2) && !(action==4) && !(action==3))
@@ -220,7 +219,6 @@ public class DroneAgent : Agent
 
         if (action==1)
         {
-            Debug.Log("action==1");
             upForce = 450f;
             if (Mathf.Abs(actionZ) > 0.2f)
             {

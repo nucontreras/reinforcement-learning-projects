@@ -59,6 +59,7 @@
     <Compile Include="Assets\DroneAgent.cs" />
     <Compile Include="Assets\CameraFollowScript.cs" />
     <Compile Include="Assets\PropellerSpin.cs" />
+    <Compile Include="Assets\TargetController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts Recovery\DroneMovementScript.txt" />
