@@ -27,6 +27,12 @@ public class DroneAgent : Agent
     private float tiltAmountSideways;
     private float tiltAmountVelocity;
 
+    // Target
+
+    public GameObject target;
+    public Vector3[] targets = new Vector3[5];
+    private int index = 0;
+
 
     public override void Initialize()
     {
@@ -35,6 +41,15 @@ public class DroneAgent : Agent
         ourDrone = GetComponent<Rigidbody>();
         //m_GroundRenderer = ground.GetComponent<Renderer>();
         //m_GroundMaterial = m_GroundRenderer.material;
+
+        // Target
+        targets[0] = new Vector3(0f, 18f, 35f);
+        targets[1] = new Vector3(0f, 65f, 140f);
+        targets[2] = new Vector3(150, 65f, 290f);
+        targets[3] = new Vector3(420f, 50f, 190f);
+        targets[4] = new Vector3(22f, 30f, -100f);
+
+        target.transform.localPosition = targets[index];
     }
 
     public override void OnEpisodeBegin()
@@ -99,42 +114,6 @@ public class DroneAgent : Agent
         AddReward(-0.1f / MaxStep);
     }
 
-    //public void MoveAgent(ActionSegment<int> act)
-    //{
-    //    var dirToGo = Vector3.zero;
-    //    var rotateDir = Vector3.zero;
-
-    //    var action = act[0];
-
-    //    switch (action)
-    //    {
-    //        case 1:
-    //            dirToGo = transform.forward * 1f;
-    //            break;
-    //        case 2:
-    //            dirToGo = transform.forward * -1f;
-    //            break;
-    //        case 3:
-    //            rotateDir = transform.up * 1f;
-    //            break;
-    //        case 4:
-    //            rotateDir = transform.up * -1f;
-    //            break;
-    //        case 5:
-    //            dirToGo = transform.right * -0.75f;
-    //            break;
-    //        case 6:
-    //            dirToGo = transform.right * 0.75f;
-    //            break;
-    //        case 7:
-    //            dirToGo = transform.right * -0.75f;
-    //            break;
-    //        case 8:
-    //            dirToGo = transform.right * 0.75f;
-    //            break;
-    //    }
-    //}
-
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         var discreteActionsOut = actionsOut.DiscreteActions;
@@ -161,28 +140,6 @@ public class DroneAgent : Agent
         }
     }
 
-    // No ML Agents program
-
-    //void Awake()
-    //{
-    //    ourDrone = GetComponent<Rigidbody>();
-    //    //ourDrone.transform.localRotation = Quaternion.Euler(0, 180, 0);
-    //}
-    ////void Start()
-    ////{
-
-    ////}
-    //private void FixedUpdate()
-    //{
-    //    MovementUpDown();
-    //    MovementForward();
-    //    Rotation();
-    //    ClampingSpeedValues();
-    //    Swerwe();
-
-    //    ourDrone.AddRelativeForce(Vector3.up * upForce);
-    //    ourDrone.rotation = Quaternion.Euler(new Vector3(tiltAmountForward, currentYRotation, tiltAmountSideways));
-    //}
 
     public void MovementUpDown(ActionBuffers actionBuffers)
     {
@@ -294,4 +251,32 @@ public class DroneAgent : Agent
             tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, 0, ref tiltAmountVelocity, 0.1f);
         }
     }
+
+    public void MoveTargetToAnotherPosition()
+    {
+        //var newTargetPos = m_startingPos + (Random.insideUnitSphere * spawnRadius);
+        //newTargetPos.y = m_startingPos.y;
+        index++;
+        if (index > 4)
+        {
+            // addreward positive. it's finished.
+            Debug.Log("Finished");
+        }
+        else
+        {
+            target.transform.localPosition = targets[index];
+        }
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        Debug.Log("Collision enter in function");
+        if (col.gameObject.CompareTag("Target"))
+        {
+            Debug.Log("Collision");
+            //onTriggerEnterEvent.Invoke(col);
+            MoveTargetToAnotherPosition();
+        }
+    }
+
 }
