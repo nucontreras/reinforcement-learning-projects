@@ -158,9 +158,9 @@ public class DroneAgent : Agent
 
         if ((Mathf.Abs(actionX) > 0.2f || Mathf.Abs(actionZ) > 0.2f))
         {
-            Debug.Log("big action x and action z");
-            Debug.Log(actionX);
-            Debug.Log(actionZ);
+            //Debug.Log("big action x and action z");
+            //Debug.Log(actionX);
+            //Debug.Log(actionZ);
 
             if (action==1 || action==2)
             {
@@ -269,7 +269,6 @@ public class DroneAgent : Agent
     {
         //var newTargetPos = m_startingPos + (Random.insideUnitSphere * spawnRadius);
         //newTargetPos.y = m_startingPos.y;
-        index++;
         if (index > 4)
         {
             // addreward positive. it's finished.
@@ -278,18 +277,21 @@ public class DroneAgent : Agent
         else
         {
             target.transform.localPosition = targets[index];
+            target.SetActive(true);
         }
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerExit(Collider col)
     {
         Debug.Log("Collision enter in function");
         if (col.gameObject.CompareTag("Target"))
         {
-            Debug.Log("Collision");
+            target.SetActive(false);
+            index++;
             //onTriggerEnterEvent.Invoke(col);
             MoveTargetToAnotherPosition();
         }
+        Debug.Log(index);
     }
 
 }
