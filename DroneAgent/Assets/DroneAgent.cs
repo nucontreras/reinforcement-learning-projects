@@ -30,9 +30,14 @@ public class DroneAgent : Agent
 
     // Target
 
-    public GameObject target;
-    private Vector3[] targets = new Vector3[5];
-    private int index = 0;
+    public GameObject Target;
+    public GameObject CheckPoint1;
+    public GameObject CheckPoint2;
+    public GameObject CheckPoint3;
+    public GameObject CheckPoint4;
+    public GameObject CheckPoint5;
+    //private Vector3[] targets = new Vector3[5];
+    //private int index = 0;
 
 
     public override void Initialize()
@@ -46,13 +51,13 @@ public class DroneAgent : Agent
         //m_GroundMaterial = m_GroundRenderer.material;
 
         // Target
-        targets[0] = new Vector3(0f, 18f, 35f);
-        targets[1] = new Vector3(0f, 65f, 140f);
-        targets[2] = new Vector3(150, 65f, 290f);
-        targets[3] = new Vector3(420f, 50f, 190f);
-        targets[4] = new Vector3(22f, 30f, -100f);
+        //targets[0] = new Vector3(0f, 18f, 35f);
+        //targets[1] = new Vector3(0f, 65f, 140f);
+        //targets[2] = new Vector3(150, 65f, 290f);
+        //targets[3] = new Vector3(420f, 50f, 190f);
+        //targets[4] = new Vector3(22f, 30f, -100f);
 
-        target.transform.localPosition = targets[index];
+        //target.transform.localPosition = targets[index];
     }
 
     public override void OnEpisodeBegin()
@@ -60,7 +65,14 @@ public class DroneAgent : Agent
         this.ourDrone.transform.localPosition = new Vector3(0f, 0f, 0f);
         this.ourDrone.angularVelocity = Vector3.zero;
         this.ourDrone.velocity = Vector3.zero;
-        
+
+        CheckPoint1.SetActive(true);
+        CheckPoint2.SetActive(false);
+        CheckPoint3.SetActive(false);
+        CheckPoint4.SetActive(false);
+        CheckPoint5.SetActive(false);
+        Target.SetActive(false);
+
         //upForce = 98.1f;
         //this.ourDrone.AddRelativeForce(Vector3.up * upForce);  
         //this.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
@@ -265,33 +277,59 @@ public class DroneAgent : Agent
         }
     }
 
-    public void MoveTargetToAnotherPosition()
-    {
-        //var newTargetPos = m_startingPos + (Random.insideUnitSphere * spawnRadius);
-        //newTargetPos.y = m_startingPos.y;
-        if (index > 4)
-        {
-            // addreward positive. it's finished.
-            Debug.Log("Finished");
-        }
-        else
-        {
-            target.transform.localPosition = targets[index];
-            target.SetActive(true);
-        }
-    }
+    //public void MoveTargetToAnotherPosition()
+    //{
+    //    //var newTargetPos = m_startingPos + (Random.insideUnitSphere * spawnRadius);
+    //    //newTargetPos.y = m_startingPos.y;
+    //    if (index > 4)
+    //    {
+    //        // addreward positive. it's finished.
+    //        Debug.Log("Finished");
+    //    }
+    //    else
+    //    {
+    //        target.transform.localPosition = targets[index];
+    //        target.SetActive(true);
+    //    }
+    //}
 
     private void OnTriggerExit(Collider col)
     {
-        Debug.Log("Collision enter in function");
-        if (col.gameObject.CompareTag("Target"))
+        if (col.gameObject.CompareTag("CheckPoint1"))
         {
-            target.SetActive(false);
-            index++;
-            //onTriggerEnterEvent.Invoke(col);
-            MoveTargetToAnotherPosition();
+            col.gameObject.SetActive(false);
+            CheckPoint2.SetActive(true);
+            AddReward(0.1f);
         }
-        Debug.Log(index);
+        else if (col.gameObject.CompareTag("CheckPoint2"))
+        {
+            col.gameObject.SetActive(false);
+            CheckPoint3.SetActive(true);
+            AddReward(0.2f);
+        }
+        else if (col.gameObject.CompareTag("CheckPoint3"))
+        {
+            col.gameObject.SetActive(false);
+            CheckPoint4.SetActive(true);
+            AddReward(0.3f);
+        }
+        else if (col.gameObject.CompareTag("CheckPoint4"))
+        {
+            col.gameObject.SetActive(false);
+            CheckPoint5.SetActive(true);
+            AddReward(0.4f);
+        }
+        else if (col.gameObject.CompareTag("CheckPoint5"))
+        {
+            col.gameObject.SetActive(false);
+            Target.SetActive(true);
+            AddReward(0.4f);
+        }
+        else if (col.gameObject.CompareTag("Target"))
+        {
+            AddReward(1.0f);
+            EndEpisode();
+        }
     }
 
 }
