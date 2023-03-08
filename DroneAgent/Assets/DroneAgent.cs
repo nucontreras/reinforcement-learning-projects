@@ -47,6 +47,8 @@ public class DroneAgent : Agent
         ourDrone = GetComponent<Rigidbody>();
         ourDrone.angularVelocity = Vector3.zero;
         ourDrone.velocity = Vector3.zero;
+
+        ourDrone.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
         //m_GroundRenderer = ground.GetComponent<Renderer>();
         //m_GroundMaterial = m_GroundRenderer.material;
 
@@ -63,8 +65,10 @@ public class DroneAgent : Agent
     public override void OnEpisodeBegin()
     {
         this.ourDrone.transform.localPosition = new Vector3(0f, 0f, 0f);
+        this.ourDrone.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
         this.ourDrone.angularVelocity = Vector3.zero;
         this.ourDrone.velocity = Vector3.zero;
+        this.ourDrone.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
         CheckPoint1.SetActive(true);
         CheckPoint2.SetActive(false);
