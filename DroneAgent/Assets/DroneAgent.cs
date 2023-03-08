@@ -45,30 +45,19 @@ public class DroneAgent : Agent
         //currentTime = startingTime;
         //m_RobotSettings = FindObjectOfType<RobotSettings>();
         ourDrone = GetComponent<Rigidbody>();
-        ourDrone.angularVelocity = Vector3.zero;
-        ourDrone.velocity = Vector3.zero;
+        //ourDrone.angularVelocity = Vector3.zero;
+        //ourDrone.velocity = Vector3.zero;
 
-        ourDrone.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-        //m_GroundRenderer = ground.GetComponent<Renderer>();
-        //m_GroundMaterial = m_GroundRenderer.material;
-
-        // Target
-        //targets[0] = new Vector3(0f, 18f, 35f);
-        //targets[1] = new Vector3(0f, 65f, 140f);
-        //targets[2] = new Vector3(150, 65f, 290f);
-        //targets[3] = new Vector3(420f, 50f, 190f);
-        //targets[4] = new Vector3(22f, 30f, -100f);
-
-        //target.transform.localPosition = targets[index];
+        //ourDrone.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     public override void OnEpisodeBegin()
     {
-        this.ourDrone.transform.localPosition = new Vector3(0f, 0f, 0f);
-        this.ourDrone.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-        this.ourDrone.angularVelocity = Vector3.zero;
-        this.ourDrone.velocity = Vector3.zero;
-        this.ourDrone.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        ourDrone.transform.localPosition = new Vector3(0f, 0f, 0f);
+        ourDrone.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+        ourDrone.angularVelocity = Vector3.zero;
+        ourDrone.velocity = Vector3.zero;
+        ourDrone.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
         CheckPoint1.SetActive(true);
         CheckPoint2.SetActive(false);
@@ -77,15 +66,6 @@ public class DroneAgent : Agent
         CheckPoint5.SetActive(false);
         Target.SetActive(false);
 
-        //upForce = 98.1f;
-        //this.ourDrone.AddRelativeForce(Vector3.up * upForce);  
-        //this.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-        //this.ourDrone.transform.localRotation = Quaternion.Euler(0, 90, 0);
-
-        //Checkpoint1.SetActive(true);
-        //Checkpoint2.SetActive(true);
-        //Checkpoint3.SetActive(true);
-        //Checkpoint4.SetActive(true);
 
         //Target.localPosition = new Vector3(10f, 0.83f, -9);
         //currentTime = startingTime;
@@ -281,21 +261,6 @@ public class DroneAgent : Agent
         }
     }
 
-    //public void MoveTargetToAnotherPosition()
-    //{
-    //    //var newTargetPos = m_startingPos + (Random.insideUnitSphere * spawnRadius);
-    //    //newTargetPos.y = m_startingPos.y;
-    //    if (index > 4)
-    //    {
-    //        // addreward positive. it's finished.
-    //        Debug.Log("Finished");
-    //    }
-    //    else
-    //    {
-    //        target.transform.localPosition = targets[index];
-    //        target.SetActive(true);
-    //    }
-    //}
 
     private void OnTriggerExit(Collider col)
     {
