@@ -56,11 +56,16 @@ public class DroneAgent : Agent
     public override void OnEpisodeBegin()
     {
         currentYRotation = 0f;
+        wantedYRotation = 0;
+        rotationYVelocity = 0;
         ourDrone.transform.localPosition = new Vector3(0f, 0f, 0f);
         ourDrone.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
         ourDrone.angularVelocity = Vector3.zero;
         ourDrone.velocity = Vector3.zero;
         
+
+
+
 
         CheckPoint1.SetActive(true);
         CheckPoint2.SetActive(false);
