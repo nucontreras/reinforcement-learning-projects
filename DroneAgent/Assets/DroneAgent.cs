@@ -36,14 +36,16 @@ public class DroneAgent : Agent
     public GameObject CheckPoint3;
     public GameObject CheckPoint4;
     public GameObject CheckPoint5;
-    //private Vector3[] targets = new Vector3[5];
-    //private int index = 0;
+
+    float currentTime = 0f;
+    float startingTime = 20f;
+    public TextMeshProUGUI txtCountdown;
 
 
     public override void Initialize()
     {
-        //currentTime = startingTime;
-        //m_RobotSettings = FindObjectOfType<RobotSettings>();
+        currentTime = startingTime;
+        currentYRotation = 0f;
         ourDrone = GetComponent<Rigidbody>();
         //ourDrone.angularVelocity = Vector3.zero;
         //ourDrone.velocity = Vector3.zero;
@@ -53,11 +55,12 @@ public class DroneAgent : Agent
 
     public override void OnEpisodeBegin()
     {
+        currentYRotation = 0f;
         ourDrone.transform.localPosition = new Vector3(0f, 0f, 0f);
-        ourDrone.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+        ourDrone.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
         ourDrone.angularVelocity = Vector3.zero;
         ourDrone.velocity = Vector3.zero;
-        ourDrone.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        
 
         CheckPoint1.SetActive(true);
         CheckPoint2.SetActive(false);
@@ -68,7 +71,7 @@ public class DroneAgent : Agent
 
 
         //Target.localPosition = new Vector3(10f, 0.83f, -9);
-        //currentTime = startingTime;
+        currentTime = startingTime;
 
     }
 
@@ -104,14 +107,14 @@ public class DroneAgent : Agent
         //    EndEpisode();
         //}
 
-        //currentTime -= 1 * Time.deltaTime;
-        //txtCountdown.text = currentTime.ToString("F1");
-        //if (currentTime <= 0)
-        //{
-        //    currentTime = 0;
-        //    AddReward(-0.05f);
-        //    EndEpisode();
-        //}
+        currentTime -= 1 * Time.deltaTime;
+        txtCountdown.text = currentTime.ToString("F1");
+        if (currentTime <= 0)
+        {
+            currentTime = 0;
+            AddReward(-0.05f);
+            EndEpisode();
+        }
 
         // Penalty given each step to encourage agent to finish task quickly.
         AddReward(-0.1f / MaxStep);
