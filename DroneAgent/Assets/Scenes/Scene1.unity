@@ -1865,6 +1865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efef4a80d00e3684b8819f907f2ec54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 800
 --- !u!1 &1377442888 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2088289478528010084, guid: 86ff9f64c8498704794a1c72a878e440, type: 3}
@@ -1920,6 +1921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efef4a80d00e3684b8819f907f2ec54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: -800
 --- !u!1 &1528831348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1688617927700330159, guid: 86ff9f64c8498704794a1c72a878e440, type: 3}
@@ -2264,6 +2266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efef4a80d00e3684b8819f907f2ec54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 800
 --- !u!1 &1830650525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,7 +2596,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
-  m_InferenceDevice: 0
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: Drone
   TeamId: 0
@@ -2637,6 +2640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efef4a80d00e3684b8819f907f2ec54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: -800
 --- !u!1 &2101736037 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8276724931471886188, guid: 86ff9f64c8498704794a1c72a878e440, type: 3}

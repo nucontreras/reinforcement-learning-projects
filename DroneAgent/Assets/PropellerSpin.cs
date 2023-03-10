@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PropellerSpin : MonoBehaviour
 {
-    private float speed = 800f;
+    public float speed;
     // Update is called once per frame
     void Update()
     {
