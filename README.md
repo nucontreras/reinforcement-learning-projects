@@ -1,4 +1,4 @@
-# reinforcement-learning-projects
+# Reinforcement learning projects
 Reinforcement learning projects using ML-Agents in Unity
 
 ## The Abysm project - Scene 1 :dart:
