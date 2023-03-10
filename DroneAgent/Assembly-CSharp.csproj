@@ -93,29 +93,17 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\NextGenRecorder\Examples\SimpleRecorder\Scripts\RotateObj.cs" />
-    <Compile Include="Assets\NextGenRecorder\MonoBehaviours\AudioSourceRecorder.cs" />
-    <Compile Include="Assets\NextGenRecorder\MonoBehaviours\MetalOnly\MetalCameraRecorder.cs" />
-    <Compile Include="Assets\NextGenRecorder\MonoBehaviours\ImageEffectRecorder.cs" />
-    <Compile Include="Assets\NextGenRecorder\Examples\RecommendedSettings.cs" />
-    <Compile Include="Assets\NextGenRecorder\MonoBehaviours\VirtualScreen.cs" />
-    <Compile Include="Assets\NextGenRecorder\Examples\RecordingTest.cs" />
-    <Compile Include="Assets\NextGenRecorder\MonoBehaviours\MetalOnly\MetalScreenRecorder.cs" />
-    <Compile Include="Assets\NextGenRecorder\Examples\SimpleRecorder\Scripts\SimpleRecorder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\NextGenRecorder\Libraries\NextGenRecorder.NativeBridge.iOS.dll" />
     <None Include="Assets\Scripts Recovery\DroneMovementScript.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
-    <None Include="Assets\NextGenRecorder\Libraries\link.xml" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\NextGenRecorder\Sharing\Libraries\NextGenRecorder.Sharing.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -123,19 +111,13 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\NextGenRecorder\Libraries\NextGenRecorder.dll" />
-    <None Include="Assets\NextGenRecorder\Libraries\NextGenRecorder.NativeBridge.macOS.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\NextGenRecorder\Sharing\Libraries\NextGenRecorder.Sharing.NativeBridge.iOS.dll" />
-    <None Include="Assets\NextGenRecorder\Sharing\Libraries\NextGenRecorder.Sharing.NativeBridge.macOS.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\NextGenRecorder\Sharing\Libraries\link.xml" />
-    <None Include="Assets\NextGenRecorder\ReadMe.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
   </ItemGroup>
@@ -424,18 +406,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="NextGenRecorder">
-      <HintPath>Assets\NextGenRecorder\Libraries\NextGenRecorder.dll</HintPath>
-    </Reference>
-    <Reference Include="NextGenRecorder.Sharing">
-      <HintPath>Assets\NextGenRecorder\Sharing\Libraries\NextGenRecorder.Sharing.dll</HintPath>
-    </Reference>
-    <Reference Include="NextGenRecorder.NativeBridge.macOS">
-      <HintPath>Assets\NextGenRecorder\Libraries\NextGenRecorder.NativeBridge.macOS.dll</HintPath>
-    </Reference>
-    <Reference Include="NextGenRecorder.Sharing.NativeBridge.macOS">
-      <HintPath>Assets\NextGenRecorder\Sharing\Libraries\NextGenRecorder.Sharing.NativeBridge.macOS.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

@@ -72,4 +72,3 @@ DroneAgent/*.sln
 DroneAgent/.vs
 DroneAgent/Assembly-CSharp.csproj
 DroneAgent/Assets/Scripts Recovery/*
-DroneAgent/Assets/NextGenRecorder/*
