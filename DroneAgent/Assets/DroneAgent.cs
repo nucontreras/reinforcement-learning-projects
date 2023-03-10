@@ -45,7 +45,6 @@ public class DroneAgent : Agent
     public override void Initialize()
     {
         currentTime = startingTime;
-        currentYRotation = 0f;
         ourDrone = GetComponent<Rigidbody>();
         //ourDrone.angularVelocity = Vector3.zero;
         //ourDrone.velocity = Vector3.zero;
@@ -62,9 +61,6 @@ public class DroneAgent : Agent
         ourDrone.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
         ourDrone.angularVelocity = Vector3.zero;
         ourDrone.velocity = Vector3.zero;
-        
-
-
 
 
         CheckPoint1.SetActive(true);
@@ -131,9 +127,6 @@ public class DroneAgent : Agent
 
         var continuousActionsOut = actionsOut.ContinuousActions;
 
-        continuousActionsOut[0] = Input.GetAxis("Horizontal");
-        continuousActionsOut[1] = Input.GetAxis("Vertical");
-
         if (Input.GetKey(KeyCode.L))
         {
             discreteActionsOut[0] = 3;
@@ -141,6 +134,7 @@ public class DroneAgent : Agent
         else if (Input.GetKey(KeyCode.I))
         {
             discreteActionsOut[0] = 1;
+            Debug.Log(Input.GetKey(KeyCode.I));
         }
         else if (Input.GetKey(KeyCode.J))
         {
@@ -150,6 +144,10 @@ public class DroneAgent : Agent
         {
             discreteActionsOut[0] = 2;
         }
+
+        continuousActionsOut[0] = Input.GetAxis("Horizontal");
+        continuousActionsOut[1] = Input.GetAxis("Vertical");
+
     }
 
 
