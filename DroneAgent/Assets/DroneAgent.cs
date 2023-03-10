@@ -124,8 +124,10 @@ public class DroneAgent : Agent
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         var discreteActionsOut = actionsOut.DiscreteActions;
-
         var continuousActionsOut = actionsOut.ContinuousActions;
+
+        continuousActionsOut[0] = Input.GetAxis("Horizontal");
+        continuousActionsOut[1] = Input.GetAxis("Vertical");
 
         if (Input.GetKey(KeyCode.L))
         {
@@ -144,10 +146,6 @@ public class DroneAgent : Agent
         {
             discreteActionsOut[0] = 2;
         }
-
-        continuousActionsOut[0] = Input.GetAxis("Horizontal");
-        continuousActionsOut[1] = Input.GetAxis("Vertical");
-
     }
 
 
