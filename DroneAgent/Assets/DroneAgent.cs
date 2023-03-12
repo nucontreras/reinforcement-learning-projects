@@ -37,9 +37,16 @@ public class DroneAgent : Agent
     public GameObject CheckPoint4;
     public GameObject CheckPoint5;
 
+
+    // Canvas
+
     float currentTime = 0f;
     float startingTime = 20f;
     public TextMeshProUGUI txtCountdown;
+
+    // Target Orientation
+
+    private Transform target_actual;
 
 
     public override void Initialize()
@@ -70,6 +77,8 @@ public class DroneAgent : Agent
         CheckPoint5.SetActive(false);
         Target.SetActive(false);
 
+        // Orientation target
+        target_actual = CheckPoint1.transform;
 
         //Target.localPosition = new Vector3(10f, 0.83f, -9);
         currentTime = startingTime;
