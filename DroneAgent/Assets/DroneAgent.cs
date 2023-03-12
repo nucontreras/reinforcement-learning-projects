@@ -6,6 +6,7 @@ using TMPro;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
+using Unity.MLAgentsExamples;  // for using OrientationCubeController
 using System;
 
 public class DroneAgent : Agent
@@ -47,10 +48,16 @@ public class DroneAgent : Agent
     // Target Orientation
 
     private Transform target_actual;
+    //This will be used as a stabilized model space reference point for observations
+    //Because ragdolls can move erratically during training, using a stabilized reference transform improves learning
+    OrientationCubeController m_OrientationCube;
 
 
     public override void Initialize()
     {
+        // Orientation target
+        m_OrientationCube = GetComponentInChildren<OrientationCubeController>();
+
         currentTime = startingTime;
         ourDrone = GetComponent<Rigidbody>();
         //ourDrone.angularVelocity = Vector3.zero;
