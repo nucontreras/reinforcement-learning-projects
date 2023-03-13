@@ -6,7 +6,7 @@ using TMPro;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
-using Unity.MLAgentsExamples;  // for using OrientationCubeController
+//using Unity.MLAgentsExamples;  // for using OrientationCubeController
 using System;
 
 public class DroneAgent : Agent
@@ -47,7 +47,8 @@ public class DroneAgent : Agent
 
     // Target Orientation
 
-    private Transform target_actual;
+    public Transform actual_target;
+    public Transform frame;  // the frame of the drone
     //This will be used as a stabilized model space reference point for observations
     //Because ragdolls can move erratically during training, using a stabilized reference transform improves learning
     OrientationCubeController m_OrientationCube;
@@ -85,7 +86,7 @@ public class DroneAgent : Agent
         Target.SetActive(false);
 
         // Orientation target
-        target_actual = CheckPoint1.transform;
+        //actual_target = CheckPoint1.transform;
 
         //Target.localPosition = new Vector3(10f, 0.83f, -9);
         currentTime = startingTime;
@@ -102,8 +103,7 @@ public class DroneAgent : Agent
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
-
-        //MoveAgent(actionBuffers.DiscreteActions);
+        //Debug.Log(actual_target.position);
 
         MovementUpDown(actionBuffers);
         MovementForward(actionBuffers);
@@ -152,7 +152,6 @@ public class DroneAgent : Agent
         else if (Input.GetKey(KeyCode.I))
         {
             discreteActionsOut[0] = 1;
-            Debug.Log(Input.GetKey(KeyCode.I));
         }
         else if (Input.GetKey(KeyCode.J))
         {
@@ -174,10 +173,6 @@ public class DroneAgent : Agent
 
         if ((Mathf.Abs(actionX) > 0.2f || Mathf.Abs(actionZ) > 0.2f))
         {
-            //Debug.Log("big action x and action z");
-            //Debug.Log(actionX);
-            //Debug.Log(actionZ);
-
             if (action==1 || action==2)
             {
                 ourDrone.velocity = ourDrone.velocity;
@@ -320,5 +315,14 @@ public class DroneAgent : Agent
             EndEpisode();
         }
     }
+    void UpdateOrientationObjects()
+    {
+        m_OrientationCube.UpdateOrientation(frame, actual_target);
+        //Debug.Log(frame.position);
 
+    }
+    private void FixedUpdate()
+    {
+        UpdateOrientationObjects();
+    }
 }

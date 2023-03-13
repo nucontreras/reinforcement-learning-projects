@@ -1193,6 +1193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 938770074}
+  - component: {fileID: 938770075}
   m_Layer: 0
   m_Name: OrientationCube
   m_TagString: Untagged
@@ -1216,6 +1217,18 @@ Transform:
   m_Father: {fileID: 2053394759}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &938770075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938770073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb899d05fb52e44fa40eabc6b4edb00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &942236890 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 972e47b518d8e054ca1f29924318447a, type: 3}
@@ -1517,6 +1530,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8545447256379345787, guid: 86ff9f64c8498704794a1c72a878e440, type: 3}
+--- !u!4 &1050517462 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5861409178561632961, guid: 86ff9f64c8498704794a1c72a878e440, type: 3}
+  m_PrefabInstance: {fileID: 566945159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1096611327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3188,6 +3206,8 @@ MonoBehaviour:
   CheckPoint4: {fileID: 2081525402}
   CheckPoint5: {fileID: 441429542}
   txtCountdown: {fileID: 861706400}
+  actual_target: {fileID: 1220465650}
+  frame: {fileID: 1050517462}
 --- !u!54 &2053394755
 Rigidbody:
   m_ObjectHideFlags: 0
