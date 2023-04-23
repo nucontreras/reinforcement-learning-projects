@@ -6,7 +6,7 @@ using TMPro;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
-//using Unity.MLAgentsExamples;  // for using OrientationCubeController
+using Unity.DirectionIndicator;
 using System;
 
 public class DroneAgent : Agent
@@ -53,6 +53,14 @@ public class DroneAgent : Agent
     //Because ragdolls can move erratically during training, using a stabilized reference transform improves learning
     OrientationCubeController m_OrientationCube;
 
+    // Direction Indicator
+    //public bool updatedByAgent;
+    //public Transform transformToFollow; //ex: hips or body
+    //public Transform targetToLookAt; //target in the scene the indicator will point to
+    //public float heightOffset;
+    //private float m_StartingYPos;
+    DirectionIndicator m_DirectionIndicator;
+
 
     public override void Initialize()
     {
@@ -61,10 +69,6 @@ public class DroneAgent : Agent
 
         currentTime = startingTime;
         ourDrone = GetComponent<Rigidbody>();
-        //ourDrone.angularVelocity = Vector3.zero;
-        //ourDrone.velocity = Vector3.zero;
-
-        //ourDrone.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     public override void OnEpisodeBegin()
@@ -317,9 +321,14 @@ public class DroneAgent : Agent
     }
     void UpdateOrientationObjects()
     {
-        m_OrientationCube.UpdateOrientation(frame, actual_target);
-        //Debug.Log(frame.position);
-
+        //m_OrientationCube.UpdateOrientation(frame, actual_target);
+        
+        //m_WorldDirToWalk = target.position - hips.position;
+        //m_OrientationCube.UpdateOrientation(hips, target);
+        if (m_DirectionIndicator)
+        {
+            m_DirectionIndicator.MatchOrientation(CheckPoint1.transform);
+        }
     }
     private void FixedUpdate()
     {
