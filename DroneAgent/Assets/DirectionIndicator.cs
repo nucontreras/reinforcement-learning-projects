@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Unity.DirectionIndicator
+namespace Unity.ArrowIndicator
 {
     public class DirectionIndicator : MonoBehaviour
     {
@@ -13,25 +13,27 @@ namespace Unity.DirectionIndicator
 
         void OnEnable()
         {
-            m_StartingYPos = transform.position.y;
+            //m_StartingYPos = transform.position.y;
         }
 
         void Update()
         {
-            if (updatedByAgent)
-                return;
             transform.position = new Vector3(transformToFollow.position.x, transformToFollow.position.y + heightOffset,
                 transformToFollow.position.z);
             Vector3 walkDir = targetToLookAt.position - transform.position;
-            walkDir.x = 90 + walkDir.x;
-            transform.rotation = Quaternion.LookRotation(walkDir);
+            //walkDir.y = walkDir.y;
+            Debug.Log("transform.rotation");
+            Debug.Log(transform.rotation);
+            //transform.rotation = Quaternion.LookRotation(walkDir);
+            transform.rotation = Quaternion.Euler(walkDir);
         }
 
         //Public method to allow an agent to directly update this component
         public void MatchOrientation(Transform t)
         {
-            transform.position = new Vector3(t.position.x, m_StartingYPos + heightOffset, t.position.z);
-            transform.rotation = t.rotation;
+            //Debug.Log("matchorientation");
+            //transform.position = new Vector3(t.position.x, t.position.y, t.position.z);
+            //transform.rotation = t.rotation;
         }
     }
 }
