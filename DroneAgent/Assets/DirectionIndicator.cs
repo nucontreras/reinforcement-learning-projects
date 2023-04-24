@@ -20,12 +20,12 @@ namespace Unity.ArrowIndicator
         {
             transform.position = new Vector3(transformToFollow.position.x, transformToFollow.position.y + heightOffset,
                 transformToFollow.position.z);
-            Vector3 walkDir = targetToLookAt.position - transform.position;
-            //walkDir.y = walkDir.y;
-            Debug.Log("transform.rotation");
-            Debug.Log(transform.rotation);
+            Vector3 walkDir = transformToFollow.position - targetToLookAt.position;
+            //walkDir.z = walkDir.z;
+            Debug.Log("walkDir");
+            Debug.Log(walkDir);
             //transform.rotation = Quaternion.LookRotation(walkDir);
-            transform.rotation = Quaternion.Euler(walkDir);
+            transform.rotation = Quaternion.Euler(new Vector3(0, walkDir.z + 90, walkDir.y));
         }
 
         //Public method to allow an agent to directly update this component

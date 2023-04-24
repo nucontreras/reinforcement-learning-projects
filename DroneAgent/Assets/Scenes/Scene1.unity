@@ -3198,7 +3198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updatedByAgent: 0
-  transformToFollow: {fileID: 1050517462}
+  transformToFollow: {fileID: 2053394759}
   targetToLookAt: {fileID: 1220465650}
   heightOffset: 0.9
 --- !u!1001 &1965997639

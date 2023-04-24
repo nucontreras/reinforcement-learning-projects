@@ -6,7 +6,7 @@ using TMPro;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
-using Unity.DirectionIndicator;
+using Unity.ArrowIndicator;
 using System;
 
 public class DroneAgent : Agent
@@ -65,7 +65,8 @@ public class DroneAgent : Agent
     public override void Initialize()
     {
         // Orientation target
-        m_OrientationCube = GetComponentInChildren<OrientationCubeController>();
+        //m_OrientationCube = GetComponentInChildren<OrientationCubeController>();
+        m_DirectionIndicator = GetComponentInChildren<DirectionIndicator>();
 
         currentTime = startingTime;
         ourDrone = GetComponent<Rigidbody>();
@@ -327,10 +328,11 @@ public class DroneAgent : Agent
         //m_OrientationCube.UpdateOrientation(hips, target);
         if (m_DirectionIndicator)
         {
+            Debug.Log("Cha");
             m_DirectionIndicator.MatchOrientation(CheckPoint1.transform);
         }
     }
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         UpdateOrientationObjects();
     }
