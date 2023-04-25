@@ -21,7 +21,6 @@ namespace Unity.ArrowIndicator
             transform.position = new Vector3(transformToFollow.position.x, transformToFollow.position.y + heightOffset,
                 transformToFollow.position.z);
             Vector3 walkDir = targetToLookAt.position - transformToFollow.position;
-            walkDir.x = 0;
             Debug.Log("walkDir");
             Debug.Log(walkDir);
             transform.rotation = Quaternion.LookRotation(walkDir);

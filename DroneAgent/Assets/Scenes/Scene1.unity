@@ -2534,7 +2534,7 @@ MonoBehaviour:
   updatedByAgent: 0
   transformToFollow: {fileID: 2053394759}
   targetToLookAt: {fileID: 1220465650}
-  heightOffset: 1
+  heightOffset: 0
 --- !u!1 &1664831956
 GameObject:
   m_ObjectHideFlags: 0
