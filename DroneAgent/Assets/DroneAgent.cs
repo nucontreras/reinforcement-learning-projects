@@ -90,8 +90,7 @@ public class DroneAgent : Agent
         CheckPoint5.SetActive(false);
         Target.SetActive(false);
 
-        // Orientation target
-        //actual_target = CheckPoint1.transform;
+        m_DirectionIndicator.targetToLookAt = CheckPoint1.transform;
 
         //Target.localPosition = new Vector3(10f, 0.83f, -9);
         currentTime = startingTime;
@@ -288,30 +287,35 @@ public class DroneAgent : Agent
         {
             col.gameObject.SetActive(false);
             CheckPoint2.SetActive(true);
+            m_DirectionIndicator.targetToLookAt = CheckPoint2.transform;
             AddReward(0.1f);
         }
         else if (col.gameObject.CompareTag("CheckPoint2"))
         {
             col.gameObject.SetActive(false);
             CheckPoint3.SetActive(true);
+            m_DirectionIndicator.targetToLookAt = CheckPoint3.transform;
             AddReward(0.2f);
         }
         else if (col.gameObject.CompareTag("CheckPoint3"))
         {
             col.gameObject.SetActive(false);
             CheckPoint4.SetActive(true);
+            m_DirectionIndicator.targetToLookAt = CheckPoint4.transform;
             AddReward(0.3f);
         }
         else if (col.gameObject.CompareTag("CheckPoint4"))
         {
             col.gameObject.SetActive(false);
             CheckPoint5.SetActive(true);
+            m_DirectionIndicator.targetToLookAt = CheckPoint5.transform;
             AddReward(0.4f);
         }
         else if (col.gameObject.CompareTag("CheckPoint5"))
         {
             col.gameObject.SetActive(false);
             Target.SetActive(true);
+            m_DirectionIndicator.targetToLookAt = Target.transform;
             AddReward(0.4f);
         }
         else if (col.gameObject.CompareTag("Target"))
