@@ -9,12 +9,12 @@ namespace Unity.ArrowIndicator
         public Transform transformToFollow; //ex: hips or body
         public Transform targetToLookAt; //target in the scene the indicator will point to
         public float heightOffset;
-        private float m_StartingYPos;
+        //private float m_StartingYPos;
 
-        void OnEnable()
-        {
-            //m_StartingYPos = transform.position.y;
-        }
+        //void OnEnable()
+        //{
+        //    //m_StartingYPos = transform.position.y;
+        //}
 
         void Update()
         {

@@ -38,17 +38,20 @@ public class DroneAgent : Agent
     public GameObject CheckPoint4;
     public GameObject CheckPoint5;
 
+    //Target the agent will walk towards during training.
+    [Header("Target To Fly Towards")] public Transform target;
+
+    //The direction an agent will walk during training.
+    private Vector3 m_WorldDirToWalk = Vector3.right;
 
     // Canvas
-
     float currentTime = 0f;
     float startingTime = 20f;
     public TextMeshProUGUI txtCountdown;
 
-    // Target Orientation
+    // Drone parts
+    public Transform drone;
 
-    public Transform actual_target;
-    public Transform frame;  // the frame of the drone
     //This will be used as a stabilized model space reference point for observations
     //Because ragdolls can move erratically during training, using a stabilized reference transform improves learning
     OrientationCubeController m_OrientationCube;
@@ -65,7 +68,7 @@ public class DroneAgent : Agent
     public override void Initialize()
     {
         // Orientation target
-        //m_OrientationCube = GetComponentInChildren<OrientationCubeController>();
+        m_OrientationCube = GetComponentInChildren<OrientationCubeController>();
         m_DirectionIndicator = GetComponentInChildren<DirectionIndicator>();
 
         currentTime = startingTime;
@@ -90,7 +93,8 @@ public class DroneAgent : Agent
         CheckPoint5.SetActive(false);
         Target.SetActive(false);
 
-        m_DirectionIndicator.targetToLookAt = CheckPoint1.transform;
+        target = CheckPoint1.transform;
+        m_DirectionIndicator.targetToLookAt = target;
 
         //Target.localPosition = new Vector3(10f, 0.83f, -9);
         currentTime = startingTime;
@@ -287,35 +291,40 @@ public class DroneAgent : Agent
         {
             col.gameObject.SetActive(false);
             CheckPoint2.SetActive(true);
-            m_DirectionIndicator.targetToLookAt = CheckPoint2.transform;
+            target = CheckPoint2.transform;
+            m_DirectionIndicator.targetToLookAt = target;
             AddReward(0.1f);
         }
         else if (col.gameObject.CompareTag("CheckPoint2"))
         {
             col.gameObject.SetActive(false);
             CheckPoint3.SetActive(true);
-            m_DirectionIndicator.targetToLookAt = CheckPoint3.transform;
+            target = CheckPoint3.transform;
+            m_DirectionIndicator.targetToLookAt = target;
             AddReward(0.2f);
         }
         else if (col.gameObject.CompareTag("CheckPoint3"))
         {
             col.gameObject.SetActive(false);
             CheckPoint4.SetActive(true);
-            m_DirectionIndicator.targetToLookAt = CheckPoint4.transform;
+            target = CheckPoint4.transform;
+            m_DirectionIndicator.targetToLookAt = target;
             AddReward(0.3f);
         }
         else if (col.gameObject.CompareTag("CheckPoint4"))
         {
             col.gameObject.SetActive(false);
             CheckPoint5.SetActive(true);
-            m_DirectionIndicator.targetToLookAt = CheckPoint5.transform;
+            target = CheckPoint5.transform;
+            m_DirectionIndicator.targetToLookAt = target;
             AddReward(0.4f);
         }
         else if (col.gameObject.CompareTag("CheckPoint5"))
         {
             col.gameObject.SetActive(false);
             Target.SetActive(true);
-            m_DirectionIndicator.targetToLookAt = Target.transform;
+            target = Target.transform;
+            m_DirectionIndicator.targetToLookAt = target;
             AddReward(0.4f);
         }
         else if (col.gameObject.CompareTag("Target"))
@@ -326,18 +335,19 @@ public class DroneAgent : Agent
     }
     void UpdateOrientationObjects()
     {
-        //m_OrientationCube.UpdateOrientation(frame, actual_target);
-        
-        //m_WorldDirToWalk = target.position - hips.position;
-        //m_OrientationCube.UpdateOrientation(hips, target);
+        m_WorldDirToWalk = target.position - drone.position;  
+        m_OrientationCube.UpdateOrientation(drone, target);
+
         if (m_DirectionIndicator)
         {
-            Debug.Log("Cha");
-            m_DirectionIndicator.MatchOrientation(CheckPoint1.transform);
+            m_DirectionIndicator.MatchOrientation(m_OrientationCube.transform);
         }
     }
     void FixedUpdate()
     {
-        UpdateOrientationObjects();
+        //UpdateOrientationObjects();
+
+        var cubeForward = m_OrientationCube.transform.forward;
+        var lookAtTargetReward = (Vector3.Dot(cubeForward, drone.forward) + 1) * .5F;
     }
 }
