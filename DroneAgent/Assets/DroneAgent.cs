@@ -345,7 +345,7 @@ public class DroneAgent : Agent
     }
     void FixedUpdate()
     {
-        //UpdateOrientationObjects();
+        UpdateOrientationObjects();
 
         var cubeForward = m_OrientationCube.transform.forward;
         var lookAtTargetReward = (Vector3.Dot(cubeForward, drone.forward) + 1) * .5F;
