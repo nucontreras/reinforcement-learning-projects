@@ -73,3 +73,7 @@ DroneAgent/.vs
 DroneAgent/Assembly-CSharp.csproj
 DroneAgent/Assets/Scripts Recovery/*
 DroneAgent/Recordings/*
+DroneAgent/ADG_Textures/*
+DroneAgent/Conifers [BOTD]/*
+DroneAgent/GrassFlowers/*
+DroneAgent/_TerrainAutoUpgrade/*
