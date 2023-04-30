@@ -56,20 +56,26 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\MLAgentsSettingsProvider.cs">
+      <Link>Editor\MLAgentsSettingsProvider.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\RenderTextureSensorComponentEditor.cs">
+      <Link>Editor\RenderTextureSensorComponentEditor.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\Match3ActuatorComponentEditor.cs">
+      <Link>Editor\Match3ActuatorComponentEditor.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\BufferSensorComponentEditor.cs">
+      <Link>Editor\BufferSensorComponentEditor.cs</Link>
+    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\BehaviorParametersEditor.cs">
       <Link>Editor\BehaviorParametersEditor.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\DemonstrationImporter.cs">
       <Link>Editor\DemonstrationImporter.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\MLAgentsSettingsProvider.cs">
-      <Link>Editor\MLAgentsSettingsProvider.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\MLAgentsSettingsBuildProvider.cs">
       <Link>Editor\MLAgentsSettingsBuildProvider.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\RenderTextureSensorComponentEditor.cs">
-      <Link>Editor\RenderTextureSensorComponentEditor.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\EditorUtilities.cs">
       <Link>Editor\EditorUtilities.cs</Link>
@@ -95,14 +101,8 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\DemonstrationDrawer.cs">
       <Link>Editor\DemonstrationDrawer.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\Match3ActuatorComponentEditor.cs">
-      <Link>Editor\Match3ActuatorComponentEditor.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\RayPerceptionSensorComponentBaseEditor.cs">
       <Link>Editor\RayPerceptionSensorComponentBaseEditor.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Editor\BufferSensorComponentEditor.cs">
-      <Link>Editor\BufferSensorComponentEditor.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -378,11 +378,8 @@
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Unsafe">
-      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Cecil.Mdb">
-      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
@@ -394,16 +391,16 @@
       <HintPath>Library\PackageCache\com.unity.barracuda@2.3.1-preview\Barracuda\Runtime\Plugins\ProtoBuffer\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Pdb">
-      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil">
-      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
-      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
@@ -813,11 +810,11 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.TestRunner">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -59,15 +59,6 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\SideChannels\RawBytesChannel.cs">
       <Link>Runtime\SideChannels\RawBytesChannel.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\GridSensorComponent.cs">
-      <Link>Runtime\Sensors\GridSensorComponent.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Analytics\Events.cs">
-      <Link>Runtime\Analytics\Events.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\BarracudaModelExtensions.cs">
-      <Link>Runtime\Inference\BarracudaModelExtensions.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\AssemblyInfo.cs">
       <Link>Runtime\AssemblyInfo.cs</Link>
     </Compile>
@@ -80,15 +71,6 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\Reflection\IntReflectionSensor.cs">
       <Link>Runtime\Sensors\Reflection\IntReflectionSensor.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Policies\BehaviorParameters.cs">
-      <Link>Runtime\Policies\BehaviorParameters.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\Reflection\Vector4ReflectionSensor.cs">
-      <Link>Runtime\Sensors\Reflection\Vector4ReflectionSensor.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\MultiAgentGroupIdCounter.cs">
-      <Link>Runtime\MultiAgentGroupIdCounter.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\RayPerceptionSensorComponent2D.cs">
       <Link>Runtime\Sensors\RayPerceptionSensorComponent2D.cs</Link>
     </Compile>
@@ -97,18 +79,6 @@
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Analytics\AnalyticsUtils.cs">
       <Link>Runtime\Analytics\AnalyticsUtils.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Integrations\Match3\Match3SensorComponent.cs">
-      <Link>Runtime\Integrations\Match3\Match3SensorComponent.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\TensorNames.cs">
-      <Link>Runtime\Inference\TensorNames.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\TensorGenerator.cs">
-      <Link>Runtime\Inference\TensorGenerator.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\CompressionSpec.cs">
-      <Link>Runtime\Sensors\CompressionSpec.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Communicator\UnityRLCapabilities.cs">
       <Link>Runtime\Communicator\UnityRLCapabilities.cs</Link>
@@ -128,6 +98,156 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\RenderTextureSensor.cs">
       <Link>Runtime\Sensors\RenderTextureSensor.cs</Link>
     </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\TensorProxy.cs">
+      <Link>Runtime\Inference\TensorProxy.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\VectorSensor.cs">
+      <Link>Runtime\Sensors\VectorSensor.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Academy.cs">
+      <Link>Runtime\Academy.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Integrations\Match3\AbstractBoard.cs">
+      <Link>Runtime\Integrations\Match3\AbstractBoard.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\CameraSensorComponent.cs">
+      <Link>Runtime\Sensors\CameraSensorComponent.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\GeneratorImpl.cs">
+      <Link>Runtime\Inference\GeneratorImpl.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\IGridPerception.cs">
+      <Link>Runtime\Sensors\IGridPerception.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\SideChannels\SideChannelManager.cs">
+      <Link>Runtime\SideChannels\SideChannelManager.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\ActionSegment.cs">
+      <Link>Runtime\Actuators\ActionSegment.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Policies\IPolicy.cs">
+      <Link>Runtime\Policies\IPolicy.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\IMultiAgentGroup.cs">
+      <Link>Runtime\IMultiAgentGroup.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\BoxOverlapChecker.cs">
+      <Link>Runtime\Sensors\BoxOverlapChecker.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\BarracudaModelParamLoader.cs">
+      <Link>Runtime\Inference\BarracudaModelParamLoader.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\Utils\Multinomial.cs">
+      <Link>Runtime\Inference\Utils\Multinomial.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\EnvironmentParameters.cs">
+      <Link>Runtime\EnvironmentParameters.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Agent.cs">
+      <Link>Runtime\Agent.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Analytics\TrainingAnalytics.cs">
+      <Link>Runtime\Analytics\TrainingAnalytics.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Communicator\GrpcExtensions.cs">
+      <Link>Runtime\Communicator\GrpcExtensions.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\IActuator.cs">
+      <Link>Runtime\Actuators\IActuator.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\Reflection\BoolReflectionSensor.cs">
+      <Link>Runtime\Sensors\Reflection\BoolReflectionSensor.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Constants.cs">
+      <Link>Runtime\Constants.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\Reflection\ReflectionSensorBase.cs">
+      <Link>Runtime\Sensors\Reflection\ReflectionSensorBase.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\ActionSpec.cs">
+      <Link>Runtime\Actuators\ActionSpec.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\StatsRecorder.cs">
+      <Link>Runtime\StatsRecorder.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\RayPerceptionSensorComponentBase.cs">
+      <Link>Runtime\Sensors\RayPerceptionSensorComponentBase.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sampler.cs">
+      <Link>Runtime\Sampler.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\SideChannels\OutgoingMessage.cs">
+      <Link>Runtime\SideChannels\OutgoingMessage.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\IBuiltInActuator.cs">
+      <Link>Runtime\Actuators\IBuiltInActuator.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\RayPerceptionSensor.cs">
+      <Link>Runtime\Sensors\RayPerceptionSensor.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Utilities.cs">
+      <Link>Runtime\Utilities.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\SideChannels\TrainingAnalyticsSideChannel.cs">
+      <Link>Runtime\SideChannels\TrainingAnalyticsSideChannel.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\ObservationSpec.cs">
+      <Link>Runtime\Sensors\ObservationSpec.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\TensorApplier.cs">
+      <Link>Runtime\Inference\TensorApplier.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\BufferSensorComponent.cs">
+      <Link>Runtime\Sensors\BufferSensorComponent.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Policies\BrainParameters.cs">
+      <Link>Runtime\Policies\BrainParameters.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\SensorHelper.cs">
+      <Link>Runtime\SensorHelper.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\RecursionChecker.cs">
+      <Link>Runtime\RecursionChecker.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\ActuatorComponent.cs">
+      <Link>Runtime\Actuators\ActuatorComponent.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Communicator\CommunicatorFactory.cs">
+      <Link>Runtime\Communicator\CommunicatorFactory.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Integrations\Match3\Move.cs">
+      <Link>Runtime\Integrations\Match3\Move.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\GridSensorComponent.cs">
+      <Link>Runtime\Sensors\GridSensorComponent.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Analytics\Events.cs">
+      <Link>Runtime\Analytics\Events.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\BarracudaModelExtensions.cs">
+      <Link>Runtime\Inference\BarracudaModelExtensions.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Policies\BehaviorParameters.cs">
+      <Link>Runtime\Policies\BehaviorParameters.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\Reflection\Vector4ReflectionSensor.cs">
+      <Link>Runtime\Sensors\Reflection\Vector4ReflectionSensor.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\MultiAgentGroupIdCounter.cs">
+      <Link>Runtime\MultiAgentGroupIdCounter.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Integrations\Match3\Match3SensorComponent.cs">
+      <Link>Runtime\Integrations\Match3\Match3SensorComponent.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\TensorNames.cs">
+      <Link>Runtime\Inference\TensorNames.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\TensorGenerator.cs">
+      <Link>Runtime\Inference\TensorGenerator.cs</Link>
+    </Compile>
+    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\CompressionSpec.cs">
+      <Link>Runtime\Sensors\CompressionSpec.cs</Link>
+    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Communicator\RpcCommunicator.cs">
       <Link>Runtime\Communicator\RpcCommunicator.cs</Link>
     </Compile>
@@ -146,15 +266,6 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\DecisionRequester.cs">
       <Link>Runtime\DecisionRequester.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\TensorProxy.cs">
-      <Link>Runtime\Inference\TensorProxy.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\VectorSensor.cs">
-      <Link>Runtime\Sensors\VectorSensor.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Academy.cs">
-      <Link>Runtime\Academy.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\SensorShapeValidator.cs">
       <Link>Runtime\Sensors\SensorShapeValidator.cs</Link>
     </Compile>
@@ -164,17 +275,8 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\StackingSensor.cs">
       <Link>Runtime\Sensors\StackingSensor.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Integrations\Match3\AbstractBoard.cs">
-      <Link>Runtime\Integrations\Match3\AbstractBoard.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\Reflection\ObservableAttribute.cs">
       <Link>Runtime\Sensors\Reflection\ObservableAttribute.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\CameraSensorComponent.cs">
-      <Link>Runtime\Sensors\CameraSensorComponent.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\GeneratorImpl.cs">
-      <Link>Runtime\Inference\GeneratorImpl.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\ObservationWriter.cs">
       <Link>Runtime\Sensors\ObservationWriter.cs</Link>
@@ -182,17 +284,8 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\ModelRunner.cs">
       <Link>Runtime\Inference\ModelRunner.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\IGridPerception.cs">
-      <Link>Runtime\Sensors\IGridPerception.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\SideChannels\EngineConfigurationChannel.cs">
       <Link>Runtime\SideChannels\EngineConfigurationChannel.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\SideChannels\SideChannelManager.cs">
-      <Link>Runtime\SideChannels\SideChannelManager.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\ActionSegment.cs">
-      <Link>Runtime\Actuators\ActionSegment.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\SideChannels\IncomingMessage.cs">
       <Link>Runtime\SideChannels\IncomingMessage.cs</Link>
@@ -203,35 +296,14 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\EpisodeIdCounter.cs">
       <Link>Runtime\EpisodeIdCounter.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Policies\IPolicy.cs">
-      <Link>Runtime\Policies\IPolicy.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\IMultiAgentGroup.cs">
-      <Link>Runtime\IMultiAgentGroup.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\ActuatorManager.cs">
       <Link>Runtime\Actuators\ActuatorManager.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\BoxOverlapChecker.cs">
-      <Link>Runtime\Sensors\BoxOverlapChecker.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\VectorSensorComponent.cs">
       <Link>Runtime\Sensors\VectorSensorComponent.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\BarracudaModelParamLoader.cs">
-      <Link>Runtime\Inference\BarracudaModelParamLoader.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\Utils\Multinomial.cs">
-      <Link>Runtime\Inference\Utils\Multinomial.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\EnvironmentParameters.cs">
-      <Link>Runtime\EnvironmentParameters.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Demonstrations\DemonstrationSummary.cs">
       <Link>Runtime\Demonstrations\DemonstrationSummary.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Agent.cs">
-      <Link>Runtime\Agent.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\IHeuristicProvider.cs">
       <Link>Runtime\Actuators\IHeuristicProvider.cs</Link>
@@ -239,23 +311,11 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\SideChannels\FloatPropertiesChannel.cs">
       <Link>Runtime\SideChannels\FloatPropertiesChannel.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Analytics\TrainingAnalytics.cs">
-      <Link>Runtime\Analytics\TrainingAnalytics.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\InplaceArray.cs">
       <Link>Runtime\InplaceArray.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Communicator\GrpcExtensions.cs">
-      <Link>Runtime\Communicator\GrpcExtensions.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\MLAgentsSettings.cs">
       <Link>Runtime\MLAgentsSettings.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\IActuator.cs">
-      <Link>Runtime\Actuators\IActuator.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\Reflection\BoolReflectionSensor.cs">
-      <Link>Runtime\Sensors\Reflection\BoolReflectionSensor.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Areas\TrainingAreaReplicator.cs">
       <Link>Runtime\Areas\TrainingAreaReplicator.cs</Link>
@@ -263,17 +323,8 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\IActionReceiver.cs">
       <Link>Runtime\Actuators\IActionReceiver.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Constants.cs">
-      <Link>Runtime\Constants.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Analytics\InferenceAnalytics.cs">
       <Link>Runtime\Analytics\InferenceAnalytics.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\Reflection\ReflectionSensorBase.cs">
-      <Link>Runtime\Sensors\Reflection\ReflectionSensorBase.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\ActionSpec.cs">
-      <Link>Runtime\Actuators\ActionSpec.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Integrations\Match3\Match3Actuator.cs">
       <Link>Runtime\Integrations\Match3\Match3Actuator.cs</Link>
@@ -281,35 +332,14 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\IDiscreteActionMask.cs">
       <Link>Runtime\Actuators\IDiscreteActionMask.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\StatsRecorder.cs">
-      <Link>Runtime\StatsRecorder.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\UnityAgentsException.cs">
       <Link>Runtime\UnityAgentsException.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\RayPerceptionSensorComponentBase.cs">
-      <Link>Runtime\Sensors\RayPerceptionSensorComponentBase.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\VectorActuator.cs">
       <Link>Runtime\Actuators\VectorActuator.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sampler.cs">
-      <Link>Runtime\Sampler.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\SideChannels\OutgoingMessage.cs">
-      <Link>Runtime\SideChannels\OutgoingMessage.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\IBuiltInActuator.cs">
-      <Link>Runtime\Actuators\IBuiltInActuator.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\SensorComponent.cs">
       <Link>Runtime\Sensors\SensorComponent.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\RayPerceptionSensor.cs">
-      <Link>Runtime\Sensors\RayPerceptionSensor.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Utilities.cs">
-      <Link>Runtime\Utilities.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\Utils\RandomNormal.cs">
       <Link>Runtime\Inference\Utils\RandomNormal.cs</Link>
@@ -317,17 +347,8 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\Reflection\FloatReflectionSensor.cs">
       <Link>Runtime\Sensors\Reflection\FloatReflectionSensor.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\SideChannels\TrainingAnalyticsSideChannel.cs">
-      <Link>Runtime\SideChannels\TrainingAnalyticsSideChannel.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\ActuatorDiscreteActionMask.cs">
       <Link>Runtime\Actuators\ActuatorDiscreteActionMask.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\ObservationSpec.cs">
-      <Link>Runtime\Sensors\ObservationSpec.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Inference\TensorApplier.cs">
-      <Link>Runtime\Inference\TensorApplier.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\SideChannels\EnvironmentParametersChannel.cs">
       <Link>Runtime\SideChannels\EnvironmentParametersChannel.cs</Link>
@@ -335,17 +356,8 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\Reflection\EnumReflectionSensor.cs">
       <Link>Runtime\Sensors\Reflection\EnumReflectionSensor.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\BufferSensorComponent.cs">
-      <Link>Runtime\Sensors\BufferSensorComponent.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Policies\BrainParameters.cs">
-      <Link>Runtime\Policies\BrainParameters.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Demonstrations\DemonstrationWriter.cs">
       <Link>Runtime\Demonstrations\DemonstrationWriter.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\SensorHelper.cs">
-      <Link>Runtime\SensorHelper.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\SideChannels\StatsSideChannel.cs">
       <Link>Runtime\SideChannels\StatsSideChannel.cs</Link>
@@ -356,9 +368,6 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\ISensor.cs">
       <Link>Runtime\Sensors\ISensor.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\RecursionChecker.cs">
-      <Link>Runtime\RecursionChecker.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\CameraSensor.cs">
       <Link>Runtime\Sensors\CameraSensor.cs</Link>
     </Compile>
@@ -367,9 +376,6 @@
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\SimpleMultiAgentGroup.cs">
       <Link>Runtime\SimpleMultiAgentGroup.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Actuators\ActuatorComponent.cs">
-      <Link>Runtime\Actuators\ActuatorComponent.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Policies\HeuristicPolicy.cs">
       <Link>Runtime\Policies\HeuristicPolicy.cs</Link>
@@ -380,14 +386,8 @@
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\Reflection\Vector2ReflectionSensor.cs">
       <Link>Runtime\Sensors\Reflection\Vector2ReflectionSensor.cs</Link>
     </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Communicator\CommunicatorFactory.cs">
-      <Link>Runtime\Communicator\CommunicatorFactory.cs</Link>
-    </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Integrations\Match3\Match3ActuatorComponent.cs">
       <Link>Runtime\Integrations\Match3\Match3ActuatorComponent.cs</Link>
-    </Compile>
-    <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Integrations\Match3\Move.cs">
-      <Link>Runtime\Integrations\Match3\Move.cs</Link>
     </Compile>
     <Compile Include="C:\Users\nicol\Desktop\Unity Projects\ml-agents-release_19\com.unity.ml-agents\Runtime\Sensors\OneHotGridSensor.cs">
       <Link>Runtime\Sensors\OneHotGridSensor.cs</Link>
@@ -666,11 +666,8 @@
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Unsafe">
-      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Cecil.Mdb">
-      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
@@ -682,16 +679,16 @@
       <HintPath>Library\PackageCache\com.unity.barracuda@2.3.1-preview\Barracuda\Runtime\Plugins\ProtoBuffer\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Pdb">
-      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil">
-      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
-      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+      <HintPath>Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
