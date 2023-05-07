@@ -341,8 +341,21 @@ public class DroneAgent : Agent
 
         var cubeForward = m_OrientationCube.transform.forward;
 
-        // b. Rotation alignment with target direction.
-        //This reward will approach 1 if it faces the target direction perfectly and approach zero as it deviates
+        // Rotation alignment with checkpoint direction.
+        // This reward will approach 1 if it faces the target direction perfectly and approach zero as it deviates
         var lookAtTargetReward = (Vector3.Dot(cubeForward, drone.forward) + 1) * .5F;
+
+        //Check for NaNs
+        if (float.IsNaN(lookAtTargetReward))
+        {
+            throw new ArgumentException(
+                "NaN in lookAtTargetReward.\n" +
+                $" cubeForward: {cubeForward}\n" +
+                $" head.forward: {drone.forward}"
+            );
+        }
+
+        // Positive reward if the drone faces the target direction perfectly and approach zero as it deviates
+        AddReward(lookAtTargetReward);  
     }
 }
