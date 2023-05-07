@@ -123,21 +123,13 @@ public class DroneAgent : Agent
         ourDrone.rotation = Quaternion.Euler(new Vector3(tiltAmountForward, currentYRotation, tiltAmountSideways));
 
 
-        // Fell off platform
-        //if (this.transform.localPosition.y < -0.5f)
-        //{
-        //    //Debug.Log("<0");
-        //    //Debug.Log(Vector3.Distance(this.transform.localPosition, Target.localPosition));
-        //    AddReward(-0.1f);
-        //    EndEpisode();
-        //}
-
+        // Canva update and reward
         currentTime -= 1 * Time.deltaTime;
         txtCountdown.text = currentTime.ToString("F1");
         if (currentTime <= 0)
         {
             currentTime = 0;
-            AddReward(-0.05f);
+            AddReward(-0.05f);  // Penalization for exceeded
             EndEpisode();
         }
 
@@ -348,6 +340,9 @@ public class DroneAgent : Agent
         UpdateOrientationObjects();
 
         var cubeForward = m_OrientationCube.transform.forward;
+
+        // b. Rotation alignment with target direction.
+        //This reward will approach 1 if it faces the target direction perfectly and approach zero as it deviates
         var lookAtTargetReward = (Vector3.Dot(cubeForward, drone.forward) + 1) * .5F;
     }
 }
