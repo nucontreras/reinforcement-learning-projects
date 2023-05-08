@@ -6882,12 +6882,12 @@ MonoBehaviour:
   - Target
   m_RaysPerDirection: 4
   m_MaxRayDegrees: 60
-  m_SphereCastRadius: 0.5
+  m_SphereCastRadius: 2.5
   m_RayLength: 150
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 1
-  m_ObservationStacks: 1
+  m_ObservationStacks: 5
   rayHitColor: {r: 0, g: 1, b: 0.07363963, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
@@ -7312,8 +7312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 0
-    NumStackedVectorObservations: 1
+    VectorObservationSize: 27
+    NumStackedVectorObservations: 15
     m_ActionSpec:
       m_NumContinuousActions: 2
       BranchSizes: 04000000
