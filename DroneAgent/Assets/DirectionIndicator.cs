@@ -29,7 +29,7 @@ namespace Unity.ArrowIndicator
         //Public method to allow an agent to directly update this component
         public void MatchOrientation(Transform t)
         {
-            Debug.Log("matchorientation");
+            //Debug.Log("matchorientation");
             transform.position = new Vector3(t.position.x, t.position.y, t.position.z);
             transform.rotation = t.rotation;
         }
