@@ -101,13 +101,19 @@ public class DroneAgent : Agent
 
     }
 
-    //public override void CollectObservations(VectorSensor sensor)
-    //{
-    //    if (useVectorObs)
-    //    {
-    //        sensor.AddObservation(StepCount / (float)MaxStep);
-    //    }
-    //}
+    public override void CollectObservations(VectorSensor sensor)
+    {
+        var cubeForward = m_OrientationCube.transform.forward;
+
+        //rotation deltas
+        sensor.AddObservation(Quaternion.FromToRotation(drone.forward, cubeForward));
+        //sensor.AddObservation(Quaternion.FromToRotation(head.forward, cubeForward));
+
+        //Position of target position relative to cube
+        sensor.AddObservation(m_OrientationCube.transform.InverseTransformPoint(target.transform.position));
+
+        //sensor.AddObservation(StepCount / (float)MaxStep);
+    }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
