@@ -136,11 +136,16 @@ public class DroneAgent : Agent
         {
             currentTime = 0;
             AddReward(-0.05f);  // Penalization for exceeded
-            EndEpisode();
+            //EndEpisode();  // while testing 
         }
 
         // Penalty given each step to encourage agent to finish task quickly.
         AddReward(-0.1f / MaxStep);
+
+        // Testing values
+        //Debug.Log(m_OrientationCube.transform.rotation);
+        //Debug.Log(m_DirectionIndicator.transform.rotation);
+        //Debug.Log(ourDrone.rotation);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -333,7 +338,7 @@ public class DroneAgent : Agent
     }
     void UpdateOrientationObjects()
     {
-        m_WorldDirToWalk = target.position - drone.position;  
+        m_WorldDirToWalk = target.position - drone.position;
         m_OrientationCube.UpdateOrientation(drone, target);
 
         if (m_DirectionIndicator)
@@ -350,6 +355,9 @@ public class DroneAgent : Agent
         // Rotation alignment with checkpoint direction.
         // This reward will approach 1 if it faces the target direction perfectly and approach zero as it deviates
         var lookAtTargetReward = (Vector3.Dot(cubeForward, drone.forward) + 1) * .5F;
+
+        // Testing reward value
+        Debug.Log(lookAtTargetReward);
 
         //Check for NaNs
         if (float.IsNaN(lookAtTargetReward))
