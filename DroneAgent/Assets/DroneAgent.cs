@@ -296,7 +296,7 @@ public class DroneAgent : Agent
             CheckPoint2.SetActive(true);
             target = CheckPoint2.transform;
             m_DirectionIndicator.targetToLookAt = target;
-            AddReward(0.1f);
+            AddReward(0.4f);
         }
         else if (col.gameObject.CompareTag("CheckPoint2"))
         {
@@ -304,7 +304,7 @@ public class DroneAgent : Agent
             CheckPoint3.SetActive(true);
             target = CheckPoint3.transform;
             m_DirectionIndicator.targetToLookAt = target;
-            AddReward(0.2f);
+            AddReward(0.4f);
         }
         else if (col.gameObject.CompareTag("CheckPoint3"))
         {
@@ -312,7 +312,7 @@ public class DroneAgent : Agent
             CheckPoint4.SetActive(true);
             target = CheckPoint4.transform;
             m_DirectionIndicator.targetToLookAt = target;
-            AddReward(0.3f);
+            AddReward(0.6f);
         }
         else if (col.gameObject.CompareTag("CheckPoint4"))
         {
@@ -320,7 +320,7 @@ public class DroneAgent : Agent
             CheckPoint5.SetActive(true);
             target = CheckPoint5.transform;
             m_DirectionIndicator.targetToLookAt = target;
-            AddReward(0.4f);
+            AddReward(0.8f);
         }
         else if (col.gameObject.CompareTag("CheckPoint5"))
         {
@@ -328,7 +328,7 @@ public class DroneAgent : Agent
             Target.SetActive(true);
             target = Target.transform;
             m_DirectionIndicator.targetToLookAt = target;
-            AddReward(0.4f);
+            AddReward(0.8f);
         }
         else if (col.gameObject.CompareTag("Target"))
         {
@@ -357,7 +357,10 @@ public class DroneAgent : Agent
         var lookAtTargetReward = (Vector3.Dot(cubeForward, drone.forward) + 1) * .5F;
 
         // Testing reward value
-        Debug.Log(lookAtTargetReward);
+        float distanceToTarget = Vector3.Distance(target.localPosition, ourDrone.transform.localPosition);
+        //Debug.Log(distanceToTarget);
+
+        AddReward(- distanceToTarget * 5 / (float)MaxStep);
 
         //Check for NaNs
         if (float.IsNaN(lookAtTargetReward))
@@ -370,6 +373,6 @@ public class DroneAgent : Agent
         }
 
         // Positive reward if the drone faces the target direction perfectly and approach zero as it deviates
-        AddReward(lookAtTargetReward);  
+        AddReward(lookAtTargetReward / (float)MaxStep);  
     }
 }
