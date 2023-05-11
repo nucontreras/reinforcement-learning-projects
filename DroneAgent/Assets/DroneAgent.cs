@@ -373,6 +373,10 @@ public class DroneAgent : Agent
         }
 
         // Positive reward if the drone faces the target direction perfectly and approach zero as it deviates
-        AddReward(lookAtTargetReward / (float)MaxStep);  
+        AddReward(lookAtTargetReward / (float)MaxStep);
+
+        // Testing reward values
+        //Debug.Log(lookAtTargetReward / (float)100);
+        Debug.Log(-distanceToTarget * 5 / (float)MaxStep);
     }
 }
