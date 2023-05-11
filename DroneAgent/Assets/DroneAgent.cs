@@ -136,7 +136,7 @@ public class DroneAgent : Agent
         {
             currentTime = 0;
             AddReward(-0.05f);  // Penalization for exceeded
-            //EndEpisode();  // while testing 
+            EndEpisode();  // while testing 
         }
 
         // Penalty given each step to encourage agent to finish task quickly.
