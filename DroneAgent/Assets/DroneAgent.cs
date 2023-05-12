@@ -354,7 +354,7 @@ public class DroneAgent : Agent
 
         // Rotation alignment with checkpoint direction.
         // This reward will approach 1 if it faces the target direction perfectly and approach zero as it deviates
-        var lookAtTargetReward = (Vector3.Dot(cubeForward, drone.forward) + 1) * .5F;
+        var lookAtTargetReward = (Vector3.Dot(cubeForward, drone.forward) + 1) * .01f;
 
         //Check for NaNs
         if (float.IsNaN(lookAtTargetReward))
@@ -367,18 +367,18 @@ public class DroneAgent : Agent
         }
 
         // Positive reward if the drone faces the target direction perfectly and approach zero as it deviates
-        AddReward(lookAtTargetReward / (float)100);
+        AddReward(lookAtTargetReward);
 
 
         // Testing reward values
         float distanceToTarget = Vector3.Distance(target.localPosition, ourDrone.transform.localPosition);
-        //Debug.Log(distanceToTarget);
+        float distanceToTargetReward = 1 / (distanceToTarget + .001f);
 
         //AddReward(- distanceToTarget * 5 / (float)MaxStep);
-        AddReward(1 / (distanceToTarget + 0.1f));
+        AddReward(distanceToTargetReward);
 
         // Testing reward values
         //Debug.Log(lookAtTargetReward / (float)100);
-        //Debug.Log(-distanceToTarget * 5 / (float)MaxStep);
+        Debug.Log(lookAtTargetReward);
     }
 }
