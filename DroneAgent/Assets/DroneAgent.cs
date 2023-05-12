@@ -57,11 +57,6 @@ public class DroneAgent : Agent
     OrientationCubeController m_OrientationCube;
 
     // Direction Indicator
-    //public bool updatedByAgent;
-    //public Transform transformToFollow; //ex: hips or body
-    //public Transform targetToLookAt; //target in the scene the indicator will point to
-    //public float heightOffset;
-    //private float m_StartingYPos;
     DirectionIndicator m_DirectionIndicator;
 
 
@@ -356,7 +351,7 @@ public class DroneAgent : Agent
 
         // Rotation alignment with checkpoint direction.
         // This reward will approach 1 if it faces the target direction perfectly and approach zero as it deviates
-        var lookAtTargetReward = (Vector3.Dot(cubeForward, drone.forward) + 1) * .01f;
+        var lookAtTargetReward = (Vector3.Dot(cubeForward, drone.forward) + 1) * .007f;
 
         //Check for NaNs
         if (float.IsNaN(lookAtTargetReward))
@@ -380,7 +375,7 @@ public class DroneAgent : Agent
         AddReward(distanceToTargetReward);
 
         // Testing reward values
-        //Debug.Log(lookAtTargetReward / (float)100);
         //Debug.Log(lookAtTargetReward);
+        //Debug.Log(distanceToTargetReward);
     }
 }
