@@ -111,7 +111,9 @@ public class DroneAgent : Agent
 
         //Position of target position relative to cube
         sensor.AddObservation(m_OrientationCube.transform.InverseTransformPoint(target.transform.position));
-
+        
+        // Testing distance 
+        //Debug.Log(m_OrientationCube.transform.InverseTransformPoint(target.transform.position));
         //sensor.AddObservation(StepCount / (float)MaxStep);
     }
 
@@ -379,6 +381,6 @@ public class DroneAgent : Agent
 
         // Testing reward values
         //Debug.Log(lookAtTargetReward / (float)100);
-        Debug.Log(lookAtTargetReward);
+        //Debug.Log(lookAtTargetReward);
     }
 }
