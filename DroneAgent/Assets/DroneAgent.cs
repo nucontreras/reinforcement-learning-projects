@@ -356,12 +356,6 @@ public class DroneAgent : Agent
         // This reward will approach 1 if it faces the target direction perfectly and approach zero as it deviates
         var lookAtTargetReward = (Vector3.Dot(cubeForward, drone.forward) + 1) * .5F;
 
-        // Testing reward value
-        float distanceToTarget = Vector3.Distance(target.localPosition, ourDrone.transform.localPosition);
-        //Debug.Log(distanceToTarget);
-
-        AddReward(- distanceToTarget * 5 / (float)MaxStep);
-
         //Check for NaNs
         if (float.IsNaN(lookAtTargetReward))
         {
@@ -373,10 +367,18 @@ public class DroneAgent : Agent
         }
 
         // Positive reward if the drone faces the target direction perfectly and approach zero as it deviates
-        AddReward(lookAtTargetReward / (float)MaxStep);
+        AddReward(lookAtTargetReward / (float)100);
+
+
+        // Testing reward values
+        float distanceToTarget = Vector3.Distance(target.localPosition, ourDrone.transform.localPosition);
+        //Debug.Log(distanceToTarget);
+
+        //AddReward(- distanceToTarget * 5 / (float)MaxStep);
+        AddReward(1 / (distanceToTarget + 0.1f));
 
         // Testing reward values
         //Debug.Log(lookAtTargetReward / (float)100);
-        Debug.Log(-distanceToTarget * 5 / (float)MaxStep);
+        //Debug.Log(-distanceToTarget * 5 / (float)MaxStep);
     }
 }
