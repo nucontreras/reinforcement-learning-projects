@@ -293,7 +293,7 @@ public class DroneAgent : Agent
             CheckPoint2.SetActive(true);
             target = CheckPoint2.transform;
             m_DirectionIndicator.targetToLookAt = target;
-            AddReward(0.4f);
+            AddReward(0.6f);
         }
         else if (col.gameObject.CompareTag("CheckPoint2"))
         {
@@ -301,7 +301,7 @@ public class DroneAgent : Agent
             CheckPoint3.SetActive(true);
             target = CheckPoint3.transform;
             m_DirectionIndicator.targetToLookAt = target;
-            AddReward(0.4f);
+            AddReward(0.6f);
         }
         else if (col.gameObject.CompareTag("CheckPoint3"))
         {
@@ -351,7 +351,7 @@ public class DroneAgent : Agent
 
         // Rotation alignment with checkpoint direction.
         // This reward will approach 1 if it faces the target direction perfectly and approach zero as it deviates
-        var lookAtTargetReward = (Vector3.Dot(cubeForward, drone.forward) + 1) * .007f;
+        var lookAtTargetReward = (Vector3.Dot(cubeForward, drone.forward) + 1) * .00009f;
 
         //Check for NaNs
         if (float.IsNaN(lookAtTargetReward))
@@ -369,9 +369,8 @@ public class DroneAgent : Agent
 
         // Testing reward values
         float distanceToTarget = Vector3.Distance(target.localPosition, ourDrone.transform.localPosition);
-        float distanceToTargetReward = 1 / (distanceToTarget + .001f);
+        float distanceToTargetReward = 0.01f / (distanceToTarget + .001f);
 
-        //AddReward(- distanceToTarget * 5 / (float)MaxStep);
         AddReward(distanceToTargetReward);
 
         // Testing reward values
