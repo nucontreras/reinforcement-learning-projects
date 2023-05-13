@@ -1,6 +1,14 @@
 # Reinforcement learning projects
 Reinforcement learning projects using ML-Agents in Unity
 
+## Drone Agent project - Target Tracking :helicopter:
+
+### Training and Agent working visualizations
+<p float="left">
+  <img src="DroneAgent/Images/drone_training.gif" width="400" />
+  <img src="DroneAgent/Images/drone_working2.gif" width="400" /> 
+</p>
+
 ## The Abysm project - Scene 1 :dart:
 
 ### Training and Agent working visualizations
