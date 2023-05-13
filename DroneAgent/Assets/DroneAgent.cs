@@ -46,11 +46,15 @@ public class DroneAgent : Agent
 
     // Canvas
     float currentTime = 0f;
-    float startingTime = 20f;
+    float startingTime = 15f;
     public TextMeshProUGUI txtCountdown;
 
     // Drone parts
     public Transform drone;
+
+    // Align
+    public Transform frontSensor;
+    public Transform backSensor;
 
     //This will be used as a stabilized model space reference point for observations
     //Because ragdolls can move erratically during training, using a stabilized reference transform improves learning
@@ -106,8 +110,11 @@ public class DroneAgent : Agent
 
         //Position of target position relative to cube
         sensor.AddObservation(m_OrientationCube.transform.InverseTransformPoint(target.transform.position));
-        
-        // Testing distance 
+
+        // Align angle
+
+
+        // Testing
         //Debug.Log(m_OrientationCube.transform.InverseTransformPoint(target.transform.position));
         //sensor.AddObservation(StepCount / (float)MaxStep);
     }
@@ -336,7 +343,7 @@ public class DroneAgent : Agent
     void UpdateOrientationObjects()
     {
         m_WorldDirToWalk = target.position - drone.position;
-        m_OrientationCube.UpdateOrientation(drone, target);
+        m_OrientationCube.UpdateOrientation(m_OrientationCube.transform, target);
 
         if (m_DirectionIndicator)
         {
@@ -376,5 +383,12 @@ public class DroneAgent : Agent
         // Testing reward values
         //Debug.Log(lookAtTargetReward);
         //Debug.Log(distanceToTargetReward);
+
+        // Testing alignment
+        //Vector3 side1 = frontSensor.localPosition - target.position;
+        //Vector3 side2 = backSensor.localPosition - target.position;
+        //float alignAngle = Vector3.Angle(side1, side2);
+
+        //Debug.Log(m_OrientationCube.transform.position);
     }
 }
