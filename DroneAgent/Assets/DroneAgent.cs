@@ -158,23 +158,24 @@ public class DroneAgent : Agent
         var continuousActionsOut = actionsOut.ContinuousActions;
 
         continuousActionsOut[0] = Input.GetAxis("Horizontal");
-        continuousActionsOut[1] = 1; //Input.GetAxis("Vertical");
+        //continuousActionsOut[1] = Input.GetAxis("Vertical");
 
-        if (Input.GetKey(KeyCode.L))
-        {
-            discreteActionsOut[0] = 3;
-        }
-        else if (Input.GetKey(KeyCode.I))
+        
+        if (Input.GetKey(KeyCode.I))
         {
             discreteActionsOut[0] = 1;
-        }
-        else if (Input.GetKey(KeyCode.J))
-        {
-            discreteActionsOut[0] = 4;
         }
         else if (Input.GetKey(KeyCode.K))
         {
             discreteActionsOut[0] = 2;
+        }
+        if (Input.GetKey(KeyCode.L))
+        {
+            discreteActionsOut[1] = 1;
+        }
+        else if (Input.GetKey(KeyCode.J))
+        {
+            discreteActionsOut[1] = 2;
         }
     }
 
@@ -182,27 +183,28 @@ public class DroneAgent : Agent
     public void MovementUpDown(ActionBuffers actionBuffers)
     {
         var actionZ = actionBuffers.ContinuousActions[0];  // horizontal
-        var actionX = actionBuffers.ContinuousActions[1];  // vertical
+        var actionX = 1; // actionBuffers.ContinuousActions[1];  // vertical
 
-        var action = actionBuffers.DiscreteActions[0];
+        var discreteActionV = actionBuffers.DiscreteActions[0];  // vertical
+        var discreteActionH = actionBuffers.DiscreteActions[1];  // horizontal
 
         if ((Mathf.Abs(actionX) > 0.2f || Mathf.Abs(actionZ) > 0.2f))
         {
-            if (action==1 || action==2)
+            if (discreteActionV==1 || discreteActionV==2)
             {
                 ourDrone.velocity = ourDrone.velocity;
             }
-            if (!(action==1) && !(action==2) && !(action==4) && !(action==3))
+            if (!(discreteActionV==1) && !(discreteActionV==2) && !(discreteActionH==2) && !(discreteActionH==1))
             {
                 ourDrone.velocity = new Vector3(ourDrone.velocity.x, Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5), ourDrone.velocity.z);
                 upForce = 281;
             }
-            if (!(action==1) && !(action==2) && action==4 || action==3)
+            if (!(discreteActionV==1) && !(discreteActionV==2) && discreteActionH==2 || discreteActionH==1)
             {
                 ourDrone.velocity = new Vector3(ourDrone.velocity.x, Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5), ourDrone.velocity.z);
                 upForce = 110;
             }
-            if (action==4 || action==3)
+            if (discreteActionH==2 || discreteActionH==1)
             {
                 upForce = 410;
             }
@@ -212,7 +214,7 @@ public class DroneAgent : Agent
             upForce = 135;
         }
 
-        if (action==1)
+        if (discreteActionV==1)
         {
             upForce = 450f;
             if (Mathf.Abs(actionZ) > 0.2f)
@@ -220,19 +222,19 @@ public class DroneAgent : Agent
                 upForce = 500f;
             }
         }
-        else if (action==2)
+        else if (discreteActionV==2)
         {
             upForce = -200f;
         }
-        else if (!(action==1) && !(action==2) && (Mathf.Abs(actionX) < 0.2f && Mathf.Abs(actionZ) < 0.2f))
+        else if (!(discreteActionV==1) && !(discreteActionV==2) && (Mathf.Abs(actionX) < 0.2f && Mathf.Abs(actionZ) < 0.2f))
         {
             upForce = 98.1f;
         }
     }
     public void MovementForward(ActionBuffers actionBuffers)
     {
-        var actionZ = actionBuffers.ContinuousActions[0];  // horizontal
-        var actionX = actionBuffers.ContinuousActions[1];  // vertical
+        //var actionZ = actionBuffers.ContinuousActions[0];  // horizontal
+        var actionX = 1;  //actionBuffers.ContinuousActions[1];  // vertical
 
         if (actionX != 0)
         {
@@ -242,12 +244,12 @@ public class DroneAgent : Agent
     }
     public void Rotation(ActionSegment<int> act)
     {
-        var action = act[0];
-        if (action==4)
+        var discreteActionH = act[1];
+        if (discreteActionH==2)
         {
             wantedYRotation -= rotateAmoutByKeys;
         }
-        if (action==3)
+        if (discreteActionH==1)
         {
             wantedYRotation += rotateAmoutByKeys;
         }
@@ -256,7 +258,7 @@ public class DroneAgent : Agent
     public void ClampingSpeedValues(ActionBuffers actionBuffers)
     {
         var actionZ = actionBuffers.ContinuousActions[0];  // horizontal
-        var actionX = actionBuffers.ContinuousActions[1];  // vertical
+        var actionX = 1; //actionBuffers.ContinuousActions[1];  // vertical
 
         if (Mathf.Abs(actionX) > 0.2f && Mathf.Abs(actionZ) > 0.2f)
         {
@@ -278,7 +280,7 @@ public class DroneAgent : Agent
     public void Swerwe(ActionBuffers actionBuffers)
     {
         var actionZ = actionBuffers.ContinuousActions[0];  // horizontal
-        var actionX = actionBuffers.ContinuousActions[1];  // vertical
+        //var actionX = 1;  // actionBuffers.ContinuousActions[1];  // vertical
 
         if (Mathf.Abs(actionZ) > 0.2f)
         {
