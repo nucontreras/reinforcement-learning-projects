@@ -85,3 +85,21 @@ DroneAgent/Assets/LowlyPoly/*
 DroneAgent/Assets/VillagePack/*
 DroneAgent/Assets/Standard Assets/*
 DroneAgent/results/*
+
+
+# HumanoidAgents/*
+HumanoidAgents/.vsconfig
+HumanoidAgents/UserSettings/*
+HumanoidAgents/Temp/*
+HumanoidAgents/UserSettings/*
+HumanoidAgents/ProjectSettings/*
+HumanoidAgents/Logs/*
+HumanoidAgents/Library/*
+HumanoidAgents/Assets/*.meta
+HumanoidAgents/Assets/Scenes/*.meta
+HumanoidAgents/obj/*
+HumanoidAgents/*.sln
+HumanoidAgents/.vs
+HumanoidAgents/Assembly-CSharp.csproj
+HumanoidAgents/Assets/Scripts Recovery/*
+HumanoidAgents/Recordings/*
