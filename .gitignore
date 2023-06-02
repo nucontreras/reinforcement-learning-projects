@@ -103,3 +103,4 @@ HumanoidAgents/.vs
 HumanoidAgents/Assembly-CSharp.csproj
 HumanoidAgents/Assets/Scripts Recovery/*
 HumanoidAgents/Recordings/*
+HumanoidAgents/Assets/3D Models/*.meta
