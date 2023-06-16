@@ -37,11 +37,19 @@ public class PlayerController : MonoBehaviour
         {
             this.grounded = false;
         }
-        this.anim.SetBool("jump", this.grounded);
+        this.anim.SetBool("jump", !this.grounded);
     }
     private void Move()
     {
         float verticalAxis = Input.GetAxis("Vertical");
         float horizontalAxis = Input.GetAxis("Horizontal");
+
+        Vector3 movement = this.transform.forward * verticalAxis + this.transform.right * horizontalAxis;
+        movement.Normalize();
+
+        this.transform.position += movement * 0.04f;
+
+        this.anim.SetFloat("vertical", verticalAxis);
+        this.anim.SetFloat("horizontal", horizontalAxis);
     }
 }
