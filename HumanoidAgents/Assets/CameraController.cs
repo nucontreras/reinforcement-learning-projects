@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public PlayerController player;
+    
+    private float sensitivity = 500f;
+    private float clampAngle = 85f;
+    
+    private float verticalRotation;
+    private float horizontalRotation;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
