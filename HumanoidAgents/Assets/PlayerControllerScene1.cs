@@ -8,6 +8,7 @@ public class PlayerControllerScene1 : MonoBehaviour
     private Rigidbody rb;
     public LayerMask layerMask;
     public bool grounded;
+    public bool running;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class PlayerControllerScene1 : MonoBehaviour
     {
         if (Physics.CheckSphere(this.transform.position + Vector3.down, 0.2f, layerMask))
         {
+            Debug.Log(Physics.CheckSphere(this.transform.position + Vector3.down, 0.2f, layerMask));
             this.grounded = true;
         }
         else
@@ -47,7 +49,19 @@ public class PlayerControllerScene1 : MonoBehaviour
         Vector3 movement = this.transform.forward * verticalAxis + this.transform.right * horizontalAxis;
         movement.Normalize();
 
-        this.transform.position += movement * 0.04f;
+        if (horizontalAxis != 0 && verticalAxis == 0)
+        {
+            this.transform.position += movement * 0.04f;
+        }
+        else if (verticalAxis >= 0)
+        {
+            this.transform.position += movement * 0.08f;
+        } 
+
+        else
+        {
+            this.transform.position += movement * 0.03f;
+        }
 
         this.anim.SetFloat("vertical", verticalAxis);
         this.anim.SetFloat("horizontal", horizontalAxis);
