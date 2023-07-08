@@ -103,6 +103,13 @@ HumanoidAgents/.vs
 HumanoidAgents/Assembly-CSharp.csproj
 HumanoidAgents/Assets/Scripts Recovery/*
 HumanoidAgents/Recordings/*
+HumanoidAgents/Assets/3D Models/uss-salvador-st-starship/*.meta
+HumanoidAgents/Assets/3D Models/uss-salvador-st-starship/source/*.meta
+HumanoidAgents/Assets/3D Models/uss-salvador-st-starship/textures/*.meta
+HumanoidAgents/Assets/3D Models/lancelot-class-light-cruiser/*.meta
+HumanoidAgents/Assets/3D Models/lancelot-class-light-cruiser/source/*.meta
+HumanoidAgents/Assets/3D Models/lancelot-class-light-cruiser/textures/*.meta
+HumanoidAgents/Assets/3D Models/*.meta
 HumanoidAgents/Assets/3D Models/*.meta
 HumanoidAgents/Assets/Animations/*.meta
 HumanoidAgents/Assets/SpaceNavigator/*
